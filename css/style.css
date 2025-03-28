@@ -1,0 +1,209 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*para que no afecte el padding ni el margin a las dimensiones*/
+}
+/*Reglas del body*/
+body{
+    height: 100vh; /*que ocupe toda la pantalla*/
+    background-color: #dbcff6;
+    font-family: monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*Reglas del contenedor*/
+.contenedor{
+    width: 95%; /*para que sea más pequeño que el body*/
+    height: 680px; /*defino una altura para el contenedor*/
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    position: relative; /*es necesario poner position relative para que sirva como referencia al nav*/
+}
+/*Reglas de la navegación*/
+nav{
+    width: 100%; /*así el nav ocupa el 100% del contenedor*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; /*de esta manera, el nav se queda fijo en la parte superior del contenedor*/
+    top: 0; /*lo posiciona al principio del contenedor*/
+    padding: 10px;
+    border-bottom: 1px solid #333; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+nav ul{
+    list-style: none;
+    display: flex;
+}
+nav ul li{
+    margin-right: 20px;
+}
+nav ul li a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: font-size 0.2s ease-in-out, font-weight 0.3s;
+}
+nav ul li a:hover {
+    font-size: 1.6em; /* Aumenta el tamaño al pasar el cursor */
+    font-weight: bold;
+}
+nav img{
+    height: 40px;
+}
+nav img.logo{
+    position: static;  /* Esto lo posiciona respecto al contenedor */ /* Posiciona la imagen de manera centrada horizontalmente */
+    transform: translateX(-350%); /* Ajusta para centrarla perfectamente. Esto ajusta la imagen para que quede perfectamente centrada, ya que, al usar left: 50%, la imagen quedaría alineada a la mitad de su ancho, pero no centrada. */
+}
+.titulo, .info{
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 60px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+.visible{
+    display: flex;
+    animation: fade 0.5s;
+}
+h1{
+    font-size: 5em;
+    padding: 10px;
+    color: #5b3c6f;
+}
+button{
+    background-color: #f3b7c6;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    border-radius: 5px;
+    transition: scale 0.2s ease-in-out, font-weight 0.3s;
+}
+button:hover{
+    scale: 1.20;
+    font-weight: bold;
+}
+.info h1{
+    font-size: 4em;
+    color: #5b3c6f;
+}
+p{
+    font-size: 18px;
+    margin: 20px;
+    color: #7e5f9e;
+}
+
+@keyframes fade{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@media (max-width: 940px) {
+    nav {
+        display: flex;
+        justify-content: space-between; /* Centra los elementos dentro del nav */
+        align-items: center;
+        position: relative; /* Asegura que los elementos se mantengan en flujo */
+    }
+
+    nav img.logo {
+        position: static; /* Quita position absolute */
+        transform: translateX(-100%); 
+    }
+    nav ul li a {
+        text-decoration: none;
+        font-size: 1.3em; /* Reducido el tamaño del texto del menú */
+        transition: font-size 0.2s ease-in-out, font-weight 0.3s;
+    }
+    nav ul li a:hover{
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+    h1{
+        font-size: 4em;
+        padding: 10px;
+    }
+    .info h1{
+        font-size: 3.5em;
+        padding: 10px;
+    }
+    p{
+        font-size: 16px;
+    }
+}
+@media (max-width: 767px) {
+    nav {
+        padding: 0;
+        display: flex;
+        flex-direction: column-reverse; /* Coloca el logo y el modo oscuro encima del menú */
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    /* Ajuste para el logo: centrado y tamaño reducido */
+    nav img.logo {
+        transform: none;
+        width: 40px; /* Reducido el tamaño */
+        height: auto; /* Mantiene la proporción */
+        margin: 10px 0; /* Añade un poco de espacio */
+    }
+    nav img.modo-oscuro {
+        width: 30px; /* Tamaño reducido */
+        height: auto; /* Mantiene la proporción */
+        margin-left: auto; /* Alinea a la derecha */
+    }
+    /* Ajustes del menú */
+    nav ul {
+        display: flex;
+        justify-content: space-around; /* Centra los elementos del menú */
+        gap: 15px; /* Reduzco el espacio entre los elementos */
+        padding: 10px;
+        width: 100%;
+    }
+    nav ul li {
+        list-style: none;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        font-size: 1.1em; /* Reducido el tamaño del texto del menú */
+        transition: font-size 0.2s ease-in-out, font-weight 0.3s;
+    }
+    nav ul li a:hover{
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+    h1{
+        font-size: 3em;
+        padding: 10px;
+    }
+    .info h1{
+        font-size: 3em;
+        padding: 10px;
+    }
+    p{
+        font-size: 14px;
+    }
+}
+
+
+/*COLORES
+- #a992ca
+- #bcb5ef
+- #dabef3
+- #eac6e3
+- #dbcff6
+- #e7e4f4
+*/
