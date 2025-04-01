@@ -1,3 +1,4 @@
+/*Reglas generales*/
 *{
     margin: 0;
     padding: 0;
@@ -7,7 +8,7 @@
 body{
     height: 100vh; /*que ocupe toda la pantalla*/
     background-image: url('../img/fondo.png');
-    background-size: cover; /* La imagen cubre todo el fondo */
+    background-size: cover; /*para que la imagen cubra todo el fondo */
     background-position: center;
     background-repeat: no-repeat;
     font-family: "Lekton", sans-serif;
@@ -21,8 +22,8 @@ body{
     height: calc(100vh - 10%); /*defino una altura para el contenedor*/
     background-color: rgba(245, 245, 245, 0.8);
     border-radius: 5px;
-    position: relative; /*es necesario poner position relative para que sirva como referencia al nav*/
-    overflow: hidden;
+    position: relative; /*es necesario poner position relative para que sirva como referencia*/
+    overflow: hidden; /*que no sobresalga nada del contenedor*/
 }
 /*Reglas de la navegación*/
 nav{
@@ -36,50 +37,68 @@ nav{
     border-bottom: 1px solid #333; 
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
+/*Reglas del ul de la navegación*/
 nav ul{
     list-style: none;
     display: flex;
 }
+/*Reglas de los li del ul de la navegación*/
 nav ul li{
-    margin-right: 20px;
+    margin-right: 20px; /*separar los li*/
 }
+/*Reglas de los enlaces de los li de la navegación*/
 nav ul li a{
     text-decoration: none;
     color: black;
     font-size: 1.5em;
     cursor: pointer;
-    transition: font-size 0.2s ease-in-out, font-weight 0.3s;
+    transition: font-size 0.2s ease-in-out, font-weight 0.3s; /*para que la transición sea más suave*/
 }
+/*Cuando se pasa el puntero por encima de los enlaces cambia el tamaño a más y se pone en negrita*/
 nav ul li a:hover {
     font-size: 1.6em; /* Aumenta el tamaño al pasar el cursor */
     font-weight: bold;
 }
+/*Reglas de las imagenes dentro del nav*/
 nav img{
     height: 40px;
 }
+/*Reglas del LOGO*/
 nav img.logo{
-    position: static;  /* Esto lo posiciona respecto al contenedor */ /* Posiciona la imagen de manera centrada horizontalmente */
-    transform: translateX(-350%); /* Ajusta para centrarla perfectamente. Esto ajusta la imagen para que quede perfectamente centrada, ya que, al usar left: 50%, la imagen quedaría alineada a la mitad de su ancho, pero no centrada. */
+    position: static; /*Posicionarlo en referencia al contenedor*/
+    transform: translateX(-350%); /*Ajusta para centrarla perfectamente. Esto ajusta la imagen para que quede perfectamente centrada, ya que, al usar left: 50%, la imagen quedaría alineada a la mitad de su ancho, pero no centrada*/
 }
+/*Reglas de la imagen del modo oscuro en el nav*/
+nav img.oscuro{
+    cursor: pointer;
+}
+/*Cuando se pasa el cursor por la img de modo oscuro aumenta ligeramente de tamaño*/
+nav img.oscuro:hover{
+    scale: 1.1;
+}
+/*Reglas de TITULO e INFO*/
 .titulo, .info{
     position: absolute;
     width: 100%;
     height: calc(100% - 60px);
-    display: none;
+    display: none; /*por defecto, tienen display none*/
     justify-content: center;
     align-items: center;
     flex-direction: column;
     text-align: center;
 }
+/*Al añadir la clase VISIBLE se hace visible el div que corresponda*/
 .visible{
     display: flex;
     animation: fade 0.5s;
 }
+/*Reglas de h1*/
 h1{
     font-size: 6em;
     padding: 10px;
     color: #5b3c6f;
 }
+/*Reglas de los botones*/
 button{
     background-color: #a992ca;
     font-family: "Lekton", sans-serif;
@@ -87,56 +106,54 @@ button{
     padding: 10px 20px;
     margin-top: 20px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 1.2em;
     color: white;
     border-radius: 5px;
     transition: scale 0.2s ease-in-out, font-weight 0.3s;
 }
+/*Hover para el botón: se hace más grande y se pone el texto en negrita*/
 button:hover{
     scale: 1.2;
     font-weight: bold;
 }
+/*Reglas h1 de INFO*/
 .info h1{
     font-size: 4em;
     color: #5b3c6f;
 }
+/*Reglas de párrafo*/
 p{
     font-size: 18px;
     margin: 20px;
     color: #7e5f9e;
 }
+/*Reglas de span de párrafo*/
 p span{
     font-weight: bold;
     color: #5b3c6f;
 }
-
-/* Estilo general del footer */
-footer.footer {
-    position: absolute;
-    bottom: 0; /* Lo coloca en la parte inferior del contenedor */
+/*Reglas de footer*/
+footer{
     width: 100%;
     background-color: #a992ca;
-    text-align: center;
     padding: 10px 0;
-    font-family: monospace;
-    font-size: 1.2em;
-    z-index: 10; /* Asegura que esté por encima de otros elementos si es necesario */
+    font-family: "Lekton", sans-serif;;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
 }
+/*Reglas del párrafo del footer*/
 footer p {
     color: white;
-    font-size: 1.8em;
+    font-size: 1.2em;
     margin: 0;
-    white-space: nowrap; /* Evita que el texto se rompa */
-    animation: movimiento 20s linear infinite; /* Movimiento de izquierda a derecha */
-}
-.oscuro{
-    cursor: pointer;
-}
-.oscuro:hover{
-    scale: 1.1;
+    white-space: nowrap; /*de esta manera el texto no se rompe*/
+    animation: movimiento 20s linear infinite; /*animación para que el texto vaya hacia la izquiera de manera infinita*/
 }
 
-/*MODO OSCURO*/
+
+/*REGLAS DEL MODO OSCURO*/
+/*Al añadir la clase .on cambian los colores del documento y su fondo*/
 body.on {
     background-image: url('../img/fondo-oscuro.png');
     background-size: cover;
@@ -168,14 +185,13 @@ button.on {
 button.on:hover {
     background-color: #a661e8;
 }
-footer.footer.on {
+footer.on {
     background-color: #8435c1;
 }
 
 
 /*KEYFRAMES*/
-
-/*Definis el fade*/
+/*Se define el fade para que la transición al pulsar los botones sea más suave y tenga ese efecto*/
 @keyframes fade{
     from{
         opacity: 0;
@@ -184,7 +200,7 @@ footer.footer.on {
         opacity: 1;
     }
 }
-/* Definir la animación del texto */
+/* Definir la animación del texto del footer*/
 @keyframes movimiento {
     0% {
         transform: translateX(100%); /* Empieza desde la derecha */
@@ -196,29 +212,28 @@ footer.footer.on {
 
 
 /*DEFINICIÓN DE LOS MEDIA QUERIES*/
+/*Pantallas menores a 940px*/
 @media (max-width: 940px) {
     nav {
         display: flex;
-        justify-content: space-between; /* Centra los elementos dentro del nav */
+        justify-content: space-between; 
         align-items: center;
-        position: relative; /* Asegura que los elementos se mantengan en flujo */
+        position: relative; /*asegura que los elementos se mantengan en el flujo*/
     }
-
     nav img.logo {
-        position: static; /* Quita position absolute */
-        transform: translateX(-100%); 
+        transform: translateX(-100%); /*mover el logo para poder centrarlo*/
     }
     nav ul li a {
         text-decoration: none;
-        font-size: 1.3em; /* Reducido el tamaño del texto del menú */
+        font-size: 1.3em; /*se cambia el tamaño para que se acople al navegador*/
         transition: font-size 0.2s ease-in-out, font-weight 0.3s;
     }
-    nav ul li a:hover{
+    nav ul li a:hover{ /*cambio también en el hover para que vaya en proporción*/
         font-size: 1.5em;
         font-weight: bold;
     }
     h1{
-        font-size: 4em;
+        font-size: 6em;
         padding: 10px;
     }
     .info h1{
@@ -229,42 +244,40 @@ footer.footer.on {
         font-size: 16px;
     }
 }
+/*Para pantallas menores a 767px*/
 @media (max-width: 767px) {
     nav {
         padding: 0;
         display: flex;
-        flex-direction: column-reverse; /* Coloca el logo y el modo oscuro encima del menú */
+        flex-direction: column-reverse; /*para colocar el logo y el modo oscuro encima de los enlaces*/
         justify-content: center;
         align-items: center;
         position: relative;
     }
-    /* Ajuste para el logo: centrado y tamaño reducido */
     nav img.logo {
-        transform: none;
-        width: 40px; /* Reducido el tamaño */
-        height: auto; /* Mantiene la proporción */
-        margin: 10px 0; /* Añade un poco de espacio */
+        transform: none; /*se quita el transform*/
+        width: 40px; 
+        height: auto; /*mantener la proporción*/
+        margin: 2px 0;
     }
     nav img.oscuro {
-        width: 30px; /* Tamaño reducido */
-        height: auto; /* Mantiene la proporción */
-        margin-left: auto; /* Alinea a la derecha */
+        width: 30px;
+        height: auto;
+        margin: 2px 2px 0 auto;; /*lo alinea a la derecha y deja algo de espacio en el top y el right*/
     }
-    /* Ajustes del menú */
     nav ul {
         display: flex;
-        justify-content: space-around; /* Centra los elementos del menú */
-        gap: 15px; /* Reduzco el espacio entre los elementos */
+        justify-content: space-around; /*centrar los enlaces*/
+        gap: 15px; /*cambiar el espacio entre los enlaces*/
         padding: 10px;
         width: 100%;
     }
     nav ul li {
         list-style: none;
     }
-
     nav ul li a {
         text-decoration: none;
-        font-size: 1.1em; /* Reducido el tamaño del texto del menú */
+        font-size: 1.1em;
         transition: font-size 0.2s ease-in-out, font-weight 0.3s;
     }
     nav ul li a:hover{
@@ -272,7 +285,7 @@ footer.footer.on {
         font-weight: bold;
     }
     h1{
-        font-size: 3em;
+        font-size: 4em;
         padding: 10px;
     }
     .info h1{
@@ -283,13 +296,3 @@ footer.footer.on {
         font-size: 14px;
     }
 }
-
-
-/*COLORES
-- #a992ca
-- #bcb5ef
-- #dabef3
-- #eac6e3
-- #dbcff6
-- #e7e4f4
-*/
