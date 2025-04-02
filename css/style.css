@@ -66,7 +66,7 @@ nav img{
 /*Reglas del LOGO*/
 nav img.logo{
     position: static; /*Posicionarlo en referencia al contenedor*/
-    transform: translateX(-350%); /*Ajusta para centrarla perfectamente. Esto ajusta la imagen para que quede perfectamente centrada, ya que, al usar left: 50%, la imagen quedaría alineada a la mitad de su ancho, pero no centrada*/
+    transform: translateX(-500%); /*Ajusta para centrarla perfectamente. Esto ajusta la imagen para que quede perfectamente centrada, ya que, al usar left: 50%, la imagen quedaría alineada a la mitad de su ancho, pero no centrada*/
 }
 /*Reglas de la imagen del modo oscuro en el nav*/
 nav img.oscuro{
@@ -80,7 +80,7 @@ nav img.oscuro:hover{
 .titulo, .info{
     position: absolute;
     width: 100%;
-    height: calc(100% - 60px);
+    height: calc(100% - 63px);
     display: none; /*por defecto, tienen display none*/
     justify-content: center;
     align-items: center;
@@ -94,7 +94,7 @@ nav img.oscuro:hover{
 }
 /*Reglas de h1*/
 h1{
-    font-size: 6em;
+    font-size: 5em;
     padding: 10px;
     color: #5b3c6f;
 }
@@ -115,6 +115,12 @@ button{
 button:hover{
     scale: 1.2;
     font-weight: bold;
+}
+/*Reglas de la imagen de la gyoza*/
+.titulo img{
+    position: absolute;
+    height: 250px;
+    top: -40px;
 }
 /*Reglas h1 de INFO*/
 .info h1{
@@ -149,6 +155,9 @@ footer p {
     margin: 0;
     white-space: nowrap; /*de esta manera el texto no se rompe*/
     animation: movimiento 20s linear infinite; /*animación para que el texto vaya hacia la izquiera de manera infinita*/
+}
+footer p span{
+    color: #5b3c6f;
 }
 
 
@@ -190,6 +199,34 @@ footer.on {
 }
 
 
+/*PÁGINA DE 'NOSOTRAS'*/
+.perfiles {
+    height: calc(100% - 63px);
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    gap: 15px; /*espacio entre los dos divs*/
+}
+/*Reglas para los divs con las imagenes*/
+.ana, .laura {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    width: 45%; 
+}
+/*Reglas para las imagenes*/
+.ana img, .laura img {
+    width: 400px; 
+    height: auto; 
+    cursor: pointer;
+}
+/*Reglas del párrafo: lo situo con position absolute sacándolo del flujo*/
+.perfiles p{
+    position: absolute;
+    top: 70px;
+    left: 250px;
+}
+
 /*KEYFRAMES*/
 /*Se define el fade para que la transición al pulsar los botones sea más suave y tenga ese efecto*/
 @keyframes fade{
@@ -212,8 +249,8 @@ footer.on {
 
 
 /*DEFINICIÓN DE LOS MEDIA QUERIES*/
-/*Pantallas menores a 940px*/
-@media (max-width: 940px) {
+/*Pantallas menores a 985px*/
+@media (max-width: 985px) {
     nav {
         display: flex;
         justify-content: space-between; 
@@ -232,8 +269,15 @@ footer.on {
         font-size: 1.5em;
         font-weight: bold;
     }
+    .titulo, .info{
+        height: calc(100vh - 130px);
+    }
+    .titulo img{
+        height: 200px;
+        top: -20px;
+    }
     h1{
-        font-size: 6em;
+        font-size: 5em;
         padding: 10px;
     }
     .info h1{
@@ -284,6 +328,13 @@ footer.on {
         font-size: 1.2em;
         font-weight: bold;
     }
+    .titulo, .info{
+        height: calc(100vh - 198px);
+    }
+    .titulo img{
+        height: 150px;
+        top: 3px;
+    }
     h1{
         font-size: 4em;
         padding: 10px;
@@ -294,5 +345,15 @@ footer.on {
     }
     p{
         font-size: 14px;
+    }
+}
+@media (max-width: 660px) {
+    .titulo img{
+        height: 120px;
+        top: 3px;
+    }
+    h1{
+        font-size: 3.5em;
+        padding: 10px;
     }
 }
