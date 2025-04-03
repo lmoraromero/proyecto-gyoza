@@ -1,18 +1,31 @@
-const titulo = document.querySelector(".titulo");
-const info = document.querySelector(".info");
-const botonConocer = document.querySelector(".titulo button");
-const botonVolver = document.querySelector(".info button");
+const contenido = document.querySelector(".contenido");
+const imgAna = document.querySelector(".ana img");
+const uno = document.querySelector(".uno");
+const imgLaura = document.querySelector(".laura img");
+const dos = document.querySelector(".dos");
+const flechas = document.querySelectorAll(".flecha");
 const modoOscuro = document.querySelector("img.oscuro");
 
-
-//Botones cambian a la clase visible, removiendo la clase al anterior
-botonConocer.addEventListener("click", () => {
-    titulo.classList.remove("visible");
-    info.classList.add("visible");
+//Ir a la sección de Ana
+imgAna.addEventListener("click", () => {
+    contenido.classList.remove("ver");
+    uno.classList.add("ver");
 });
-botonVolver.addEventListener("click", () => {
-    info.classList.remove("visible");
-    titulo.classList.add("visible");
+//Ir a la sección de Laura
+imgLaura.addEventListener("click", () => {
+    contenido.classList.remove("ver");
+    dos.classList.add("ver");
+});
+//Volver hacia atrás
+flechas.forEach(flecha => {
+    flecha.addEventListener("click", () => {
+        // Eliminar la clase "ver" de las secciones uno y dos
+        uno.classList.remove("ver");
+        dos.classList.remove("ver");
+
+        // Agregar la clase "ver" a la sección contenido
+        contenido.classList.add("ver");
+    });
 });
 
 //Cambiar al modo oscuro
@@ -27,10 +40,8 @@ modoOscuro.addEventListener("click", () => {
         document.querySelector('nav').classList.add('on');
         
         //h1, h2, p, nav ul li a, button y footer
-        document.querySelectorAll('h1, h2').forEach(item => item.classList.add('on'));
         document.querySelectorAll('p').forEach(item => item.classList.add('on'));
         document.querySelectorAll('nav ul li a').forEach(item => item.classList.add('on'));
-        document.querySelectorAll('button').forEach(item => item.classList.add('on'));
         document.querySelector('footer').classList.add('on');
     } else {
         //vuelve a la imagen moon
@@ -42,10 +53,8 @@ modoOscuro.addEventListener("click", () => {
         document.querySelector('nav').classList.remove('on');
 
         //h1, h2, p, nav ul li a, button y footer
-        document.querySelectorAll('h1, h2').forEach(item => item.classList.remove('on'));
         document.querySelectorAll('p').forEach(item => item.classList.remove('on'));
         document.querySelectorAll('nav ul li a').forEach(item => item.classList.remove('on'));
-        document.querySelectorAll('button').forEach(item => item.classList.remove('on'));
         document.querySelector('footer').classList.remove('on');
     }
 });

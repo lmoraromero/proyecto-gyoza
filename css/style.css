@@ -71,6 +71,7 @@ nav img.logo{
 /*Reglas de la imagen del modo oscuro en el nav*/
 nav img.oscuro{
     cursor: pointer;
+    transition: scale 0.2s ease-in-out
 }
 /*Cuando se pasa el cursor por la img de modo oscuro aumenta ligeramente de tamaño*/
 nav img.oscuro:hover{
@@ -98,6 +99,9 @@ h1{
     padding: 10px;
     color: #5b3c6f;
 }
+.titulo h1{
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
 /*Reglas de los botones*/
 button{
     background-color: #a992ca;
@@ -120,7 +124,7 @@ button:hover{
 .titulo img{
     position: absolute;
     height: 250px;
-    top: -40px;
+    top: -25px;
 }
 /*Reglas h1 de INFO*/
 .info h1{
@@ -150,7 +154,7 @@ footer{
     bottom: 0;
 }
 /*Reglas del párrafo del footer*/
-footer p {
+footer p{
     color: white;
     font-size: 1.2em;
     margin: 0;
@@ -164,70 +168,131 @@ footer p span{
 
 /*REGLAS DEL MODO OSCURO*/
 /*Al añadir la clase .on cambian los colores del documento y su fondo*/
-body.on {
+body.on{
     background-image: url('../img/fondo-oscuro.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
-.contenedor.on {
+.contenedor.on{
     background-color: rgba(70, 28, 118, 0.9);
 }
-nav.on {
+nav.on{
     background-color: #3e1f6e;
 }
-h1.on, h2.on {
+h1.on, h2.on{
     color: #f0a6ca;
 }
-p.on {
+p.on{
     color: #d4c0f3;
 }
-nav ul li a.on {
+nav ul li a.on{
     color: #e6c7f7;
 }
-nav ul li a.on:hover {
+nav ul li a.on:hover{
     color: #f8a4d9;
 }
-button.on {
+button.on{
     background-color: #8435c1;
     color: white;
 }
-button.on:hover {
+button.on:hover{
     background-color: #a661e8;
 }
-footer.on {
+footer.on{
     background-color: #8435c1;
 }
 
-
+/*-----------------------------------------------------------------------------*/
 /*PÁGINA DE 'NOSOTRAS'*/
-.perfiles {
-    height: calc(100% - 63px);
+/*las tres secciones se hacen invisibles, .contenido tiene la clase .ver predeterminada*/
+.contenido, .uno, .dos{
+    height: calc(100% - 125px);
+    display: none;
+}
+/*reglas generales de contenido*/
+.contenido{
+    text-align: center;                 
+    flex-direction: column;    
+    align-items: center;       
+}
+/*Reglas del div que contiene las imagenes*/
+.perfiles{
     display: flex; 
     justify-content: center; 
     align-items: center;
     gap: 15px; /*espacio entre los dos divs*/
 }
 /*Reglas para los divs con las imagenes*/
-.ana, .laura {
+.ana, .laura{
     display: flex;
     flex-direction: column; 
     align-items: center; 
     width: 45%; 
 }
 /*Reglas para las imagenes*/
-.ana img, .laura img {
+.perfiles img{
     width: 400px; 
     height: auto; 
     cursor: pointer;
+    transition: scale 0.2s ease-in-out
+}
+.perfiles img:hover{
+    scale: 1.1;
 }
 /*Reglas del párrafo: lo situo con position absolute sacándolo del flujo*/
-.perfiles p{
+.contenido p{
+    margin-top: 10px;
+    text-align: center;
+}
+/*Reglas del contenedor de Ana (.uno) y Laura (.dos)*/
+.uno, .dos{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.uno img, .dos img{
+    width: 200px; 
+    height: auto;
+}
+.uno p, .dos p{
+    font-size: 14px;
+    margin: 5px 40px;
+}
+/*Reglas para los enlaces*/
+.enlaces{
+    display: flex;  /* Para poner los enlaces uno al lado del otro */
+    gap: 10px;      /* Espacio entre los enlaces (puedes ajustar este valor) */
+}
+.enlaces img{
+    width: 30px;    /* Establece el tamaño de las imágenes a 30px */
+    height: 30px;   /* Mantiene la relación de aspecto cuadrada si es necesario */
+}
+/*Clase .ver*/
+.ver{
+    display: flex;
+}
+/*Flecha para volver*/
+.flecha{
     position: absolute;
-    top: 70px;
-    left: 250px;
+    top: 65px;
+    left: 10px;
+    background-color: transparent;  /* Sin fondo */
+    color: #8e44ad;  /* Color morado para la flecha */
+    font-size: 30px;  /* Tamaño grande para la flecha */
+    padding: 10px 15px;  /* Espaciado adecuado */
+    border: none;  /* Sin borde */
+    cursor: pointer;
+    transition: transform 0.2s ease; 
+}
+.flecha:hover{
+    scale: 1.1;
 }
 
+
+/*------------------------------------------------------------------------------------------------------*/
 /*KEYFRAMES*/
 /*Se define el fade para que la transición al pulsar los botones sea más suave y tenga ese efecto*/
 @keyframes fade{
@@ -249,6 +314,7 @@ footer.on {
 }
 
 
+/*------------------------------------------------------------------------------------------------------*/
 /*DEFINICIÓN DE LOS MEDIA QUERIES*/
 /*Pantallas menores a 985px*/
 @media (max-width: 985px) {
