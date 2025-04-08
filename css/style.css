@@ -23,7 +23,8 @@ body{
     background-color: rgba(245, 245, 245, 0.8);
     border-radius: 5px;
     position: relative; /*es necesario poner position relative para que sirva como referencia*/
-    overflow: hidden; /*que no sobresalga nada del contenedor*/
+    overflow-x: hidden; /*que no sobresalga nada del contenedor*/
+    overflow-y: auto; /*Permite que si hay muchos elementos se pueda hacer scroll*/
 }
 /*Reglas de la navegación*/
 nav{
@@ -150,7 +151,7 @@ footer{
     padding: 10px 0;
     font-family: "Lekton", sans-serif;;
     text-align: center;
-    position: absolute;
+    position: sticky;
     bottom: 0;
 }
 /*Reglas del párrafo del footer*/
@@ -294,6 +295,33 @@ footer.on{
 .flecha:hover{
     scale: 1.1;
 }
+/*-----------------------------------------------------------------------------*/
+/*PÁGINA RESEÑAS*/
+.libros{
+    display: flex;
+    justify-content: center;
+}
+.libros ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 600px;
+    width: 100%;
+}
+.libros li{
+    margin: 10px 0;
+    text-align: center;
+    font-size: 17px;
+    padding: 12px;
+    transition: scale 0.3s;
+}
+.libros li:hover{
+    scale: 1.2;
+}
+.libros a{
+    text-decoration: none;
+}
+
 
 /*-----------------------------------------------------------------------------*/
 /*PÁGINA GENERADOR*/
@@ -319,10 +347,13 @@ footer.on{
 .generador form input[type="text"]{
     width: 80%;
     padding: 12px;
+    font-family: "Lekton", sans-serif; 
     font-size: 1em; 
+    background-color: rgba(245, 245, 245, 0.7);
     border: 1px solid #b497d6; 
     border-radius: 5px;
     margin-bottom: 15px;
+    text-align: center;
 }
 /*Reglas para los botones*/
 .generador .botones {
