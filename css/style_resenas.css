@@ -1,0 +1,13 @@
+
+/*-----------------------------------------------------------------------------*/
+/*PÁGINA RESEÑAS INDIVIDUALES*/
+.libro {
+    position: relative;
+    width: 200px; /* Ajusta según el tamaño de tus portadas */
+    margin: 20px;
+    cursor: pointer;
+}
+.portada {
+    width: 100%;
+    border-radius: 8px;
+}

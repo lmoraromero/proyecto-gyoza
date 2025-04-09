@@ -82,7 +82,7 @@ nav img.oscuro:hover{
 .titulo, .info{
     position: absolute;
     width: 100%;
-    height: calc(100% - 63px);
+    height: calc(100% - 125px);
     display: none; /*por defecto, tienen display none*/
     justify-content: center;
     align-items: center;
@@ -151,7 +151,7 @@ footer{
     padding: 10px 0;
     font-family: "Lekton", sans-serif;;
     text-align: center;
-    position: sticky;
+    position: absolute;
     bottom: 0;
 }
 /*Reglas del párrafo del footer*/
@@ -203,194 +203,6 @@ button.on:hover{
 footer.on{
     background-color: #8435c1;
 }
-
-/*-----------------------------------------------------------------------------*/
-/*PÁGINA DE 'NOSOTRAS'*/
-/*las tres secciones se hacen invisibles, .contenido tiene la clase .ver predeterminada*/
-.contenido, .uno, .dos{
-    height: calc(100% - 125px);
-    display: none;
-}
-/*reglas generales de contenido*/
-.contenido{
-    text-align: center;                 
-    flex-direction: column;    
-    align-items: center;       
-}
-/*Reglas del div que contiene las imagenes*/
-.perfiles{
-    display: flex; 
-    justify-content: center; 
-    align-items: center;
-    gap: 15px; /*espacio entre los dos divs*/
-}
-/*Reglas para los divs con las imagenes*/
-.ana, .laura{
-    display: flex;
-    flex-direction: column; 
-    align-items: center; 
-    width: 45%; 
-}
-/*Reglas para las imagenes*/
-.perfiles img{
-    width: 400px; 
-    height: auto; 
-    cursor: pointer;
-    transition: scale 0.2s ease-in-out
-}
-.perfiles img:hover{
-    scale: 1.1;
-}
-/*Reglas del párrafo: lo situo con position absolute sacándolo del flujo*/
-.contenido p{
-    margin-top: 10px;
-    margin-bottom: 25px;
-    text-align: center;
-}
-/*Reglas del contenedor de Ana (.uno) y Laura (.dos)*/
-.uno, .dos{
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-.uno img, .dos img{
-    width: 200px; 
-    height: auto;
-}
-.uno p, .dos p{
-    font-size: 14px;
-    margin: 10px 40px;
-}
-.bio p{
-    text-align: center;
-}
-/*Reglas para los enlaces*/
-.enlaces{
-    display: flex;  /* Para poner los enlaces uno al lado del otro */
-    gap: 10px;      /* Espacio entre los enlaces (puedes ajustar este valor) */
-}
-.enlaces img{
-    width: 30px;    /* Establece el tamaño de las imágenes a 30px */
-    height: 30px;   /* Mantiene la relación de aspecto cuadrada si es necesario */
-}
-/*Clase .ver*/
-.ver{
-    display: flex;
-}
-/*Flecha para volver*/
-.flecha{
-    position: absolute;
-    top: 50px;
-    left: 10px;
-    background-color: transparent;  /* Sin fondo */
-    color: #8e44ad;  /* Color morado para la flecha */
-    font-size: 40px;  /* Tamaño grande para la flecha */
-    padding: 10px 15px;  /* Espaciado adecuado */
-    border: none;  /* Sin borde */
-    cursor: pointer;
-    transition: transform 0.2s ease; 
-}
-.flecha:hover{
-    scale: 1.1;
-}
-/*-----------------------------------------------------------------------------*/
-/*PÁGINA RESEÑAS*/
-.libros{
-    display: flex;
-    justify-content: center;
-}
-.libros ul{
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    max-width: 600px;
-    width: 100%;
-}
-.libros li{
-    margin: 10px 0;
-    text-align: center;
-    font-size: 17px;
-    padding: 12px;
-    transition: scale 0.3s;
-}
-.libros li:hover{
-    scale: 1.2;
-}
-.libros a{
-    text-decoration: none;
-}
-
-
-/*-----------------------------------------------------------------------------*/
-/*PÁGINA GENERADOR*/
-/*Reglas para la sección generador*/
-.generador{
-    width: 100%;
-    height: calc(100% - 125px);
-    margin: 0 auto; 
-    text-align: center;
-}
-.generador h1{
-    margin-top: 20px;
-    margin-bottom: 15px;
-    color: #5d3a9f;
-    font-size: 3em;
-}
-.generador p{
-    color: #6a4c9c; 
-    margin-bottom: 25px;
-    text-align: center;
-}
-/*Reglas para el input tipo text*/
-.generador form input[type="text"]{
-    width: 80%;
-    padding: 12px;
-    font-family: "Lekton", sans-serif; 
-    font-size: 1em; 
-    background-color: rgba(245, 245, 245, 0.7);
-    border: 1px solid #b497d6; 
-    border-radius: 5px;
-    margin-bottom: 15px;
-    text-align: center;
-}
-/*Reglas para los botones*/
-.generador .botones {
-    display: flex;
-    justify-content: center;
-    gap: 20px; 
-    margin-bottom: 10px;
-}
-.generador .botones input[type="submit"],
-.generador .botones input[type="button"]{
-    padding: 10px;
-    font-size: 1em;
-    font-family: "Lekton", sans-serif; 
-    background-color: #a992ca; 
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out, font-weight 0.3s;
-}
-.generador .botones input[type="submit"]:hover,
-.generador .botones input[type="button"]:hover{
-    scale: 1.2; 
-    font-weight: bold;
-}
-.generador .botones .generate:hover{
-    background-color: #8f75b1; 
-}
-.generador .botones .add:hover{
-    background-color: #84619c; 
-}
-.generador .resultado {
-    margin-top: 20px;
-    font-size: 1.5em;
-    color: #6a4c9c; 
-}
-
 
 /*------------------------------------------------------------------------------------------------------*/
 /*KEYFRAMES*/

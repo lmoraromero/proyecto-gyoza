@@ -1,0 +1,91 @@
+/*-----------------------------------------------------------------------------*/
+/*PÁGINA DE 'NOSOTRAS'*/
+/*las tres secciones se hacen invisibles, .contenido tiene la clase .ver predeterminada*/
+.contenido, .uno, .dos{
+    height: calc(100% - 125px);
+    display: none;
+}
+/*reglas generales de contenido*/
+.contenido{
+    text-align: center;                 
+    flex-direction: column;    
+    align-items: center;       
+}
+/*Reglas del div que contiene las imagenes*/
+.perfiles{
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    gap: 15px; /*espacio entre los dos divs*/
+}
+/*Reglas para los divs con las imagenes*/
+.ana, .laura{
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    width: 45%; 
+}
+/*Reglas para las imagenes*/
+.perfiles img{
+    width: 400px; 
+    height: auto; 
+    cursor: pointer;
+    transition: scale 0.2s ease-in-out
+}
+.perfiles img:hover{
+    scale: 1.1;
+}
+/*Reglas del párrafo: lo situo con position absolute sacándolo del flujo*/
+.contenido p{
+    margin-top: 20px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+/*Reglas del contenedor de Ana (.uno) y Laura (.dos)*/
+.uno, .dos{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.uno img, .dos img{
+    width: 200px; 
+    height: auto;
+}
+.uno p, .dos p{
+    font-size: 16px;
+    margin: 10px 40px;
+}
+.bio p{
+    text-align: center;
+}
+/*Reglas para los enlaces*/
+.links{
+    display: flex;  /* Para poner los enlaces uno al lado del otro */
+    gap: 10px;      /* Espacio entre los enlaces (puedes ajustar este valor) */
+}
+.links img{
+    width: 30px;    /* Establece el tamaño de las imágenes a 30px */
+    height: 30px;   /* Mantiene la relación de aspecto cuadrada si es necesario */
+}
+/*Clase .ver*/
+.ver{
+    display: flex;
+}
+/*Flecha para volver*/
+.flecha{
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    background-color: transparent;  /* Sin fondo */
+    color: #8e44ad;  /* Color morado para la flecha */
+    font-size: 40px;  /* Tamaño grande para la flecha */
+    padding: 10px 15px;  /* Espaciado adecuado */
+    border: none;  /* Sin borde */
+    cursor: pointer;
+    transition: transform 0.2s ease; 
+}
+.flecha:hover{
+    scale: 1.1;
+}
