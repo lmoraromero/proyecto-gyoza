@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lekton:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"> <!--Lekton-->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style_generador.css">
-    <script defer src=""></script>
+    <script defer src="js/funciones.js"></script>
 </head>
 <body>
     <section class="contenedor">
@@ -38,68 +38,6 @@
         <footer>
             <p>LECTURA ACTUAL... <span>El Alma del Brujo - Belén Martínez ♥️🧙</span></p>
         </footer>
-
-        <script>
-            const inputTitulo = document.querySelector('input[type="text"]');
-            const botonAdd = document.querySelector('.add');
-            const botonGenerate = document.querySelector('.generate');
-            const botonLimpiar = document.querySelector('.clear');
-            const resultado = document.querySelector('.resultado');
-            const mensaje = document.querySelector('h3'); 
-
-            //Añadir títulos a un array para luego poder generarlos aleatoriamente 
-
-            let titulos = [];
-
-            botonAdd.addEventListener('click', evento => {
-                evento.preventDefault(); //Evita que el formulario se envíe y recargue la página
-
-                const titulo = inputTitulo.value.trim(); //Obtener el valor del input
-
-                if (titulo !== "") {
-                    // Añadir el título al array
-                    titulos.push(titulo);
-
-                    // Limpiar el input después de añadir
-                    inputTitulo.value = "";
-                    mensaje.innerText = "Se ha añadido:" + titulo;
-                    mensaje.style.color = "#8f75b1";
-                } else {
-                    mensaje.innerText = "Por favor, escribe un título.";
-                    mensaje.style.color = "#e4007f";
-                }
-            });
-
-            // Generar aleatoriamente los títulos del array
-            botonGenerate.addEventListener('click', evento => {
-                evento.preventDefault(); 
-                if (titulos.length > 0) {
-                    // Seleccionar un índice aleatorio
-                    const indiceAleatorio = Math.floor(Math.random() * titulos.length);
-                    const tituloAleatorio = titulos[indiceAleatorio];
-
-                    // Mostrar el título generado en el <h2>
-                    resultado.innerText = `Título seleccionado: ${tituloAleatorio}. ¡Feliz lectura!⭐`; // Usando innerText
-
-                    // Limpiar el mensaje en <h3>
-                    mensaje.innerText = "";
-                } else {
-                    resultado.innerText = "Por favor, añade títulos primero."; // Usando innerText
-                }
-            });
-
-            //Limpiar el Array por si se quiere generar nuevos títulos
-            botonLimpiar.addEventListener('click', evento => {
-                evento.preventDefault(); 
-                // Limpiar el array de títulos
-                titulos = [];
-                // Limpiar el input de texto
-                inputTitulo.value = "";
-                // Limpiar el mensaje en <h3> y <h2>
-                mensaje.innerText = "";
-                resultado.innerText = ""; 
-            });
-        </script>
     </section>
 </body>
 </html>

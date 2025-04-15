@@ -4,6 +4,7 @@
 .enlaces{
     width: 100%;
     height: calc(100% - 125px);
+    overflow-y: auto; /*Permite que si hay muchos elementos se pueda hacer scroll*/
 }
 .button{
     display: flex;
@@ -36,4 +37,7 @@
 }
 .libros a{
     text-decoration: none;
+}
+.enlaces li a.on{
+    color: #f0a6ca;
 }

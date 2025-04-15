@@ -4,6 +4,7 @@
 .contenido, .uno, .dos{
     height: calc(100% - 125px);
     display: none;
+    overflow-y: auto; /*Permite que si hay muchos elementos se pueda hacer scroll*/
 }
 /*reglas generales de contenido*/
 .contenido{
@@ -86,6 +87,16 @@
     cursor: pointer;
     transition: transform 0.2s ease; 
 }
+.flecha.on{
+    background-color: transparent;
+    font-size: 40px;
+    padding: 10px 15px; 
+    border: none;
+}
 .flecha:hover{
+    scale: 1.1;
+}
+.flecha.on:hover{
+    background-color: transparent;
     scale: 1.1;
 }

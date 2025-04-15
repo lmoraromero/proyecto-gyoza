@@ -6,6 +6,7 @@
     height: calc(100% - 125px);
     margin: 0 auto; 
     text-align: center;
+    overflow-y: auto; /*Permite que si hay muchos elementos se pueda hacer scroll*/
 }
 .generador h1{
     margin-top: 20px;
@@ -64,4 +65,11 @@
     margin-top: 20px;
     font-size: 1.5em;
     color: #6a4c9c; 
+}
+
+h1.on, h2.on, h3.on{
+    color: #f0a6ca;
+}
+p.on{
+    color: #d4c0f3;
 }

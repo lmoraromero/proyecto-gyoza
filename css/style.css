@@ -23,8 +23,7 @@ body{
     background-color: rgba(245, 245, 245, 0.8);
     border-radius: 5px;
     position: relative; /*es necesario poner position relative para que sirva como referencia*/
-    overflow-x: hidden; /*que no sobresalga nada del contenedor*/
-    overflow-y: auto; /*Permite que si hay muchos elementos se pueda hacer scroll*/
+    overflow: hidden; /*que no sobresalga nada del contenedor*/
 }
 /*Reglas de la navegación*/
 nav{
@@ -102,6 +101,8 @@ h1{
 }
 .titulo h1{
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
 }
 /*Reglas de los botones*/
 button{
@@ -124,8 +125,9 @@ button:hover{
 /*Reglas de la imagen de la gyoza*/
 .titulo img{
     position: absolute;
-    height: 250px;
+    height: 280px;
     top: -25px;
+    z-index: 1;
 }
 /*Reglas h1 de INFO*/
 .info h1{
@@ -181,7 +183,7 @@ body.on{
 nav.on{
     background-color: #3e1f6e;
 }
-h1.on, h2.on{
+h1.on, h2.on, h3.on{
     color: #f0a6ca;
 }
 p.on{
