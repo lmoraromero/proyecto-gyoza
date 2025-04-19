@@ -1,13 +1,30 @@
 
 /*-----------------------------------------------------------------------------*/
 /*PÁGINA RESEÑAS INDIVIDUALES*/
+.review{
+    width: 100%;
+    height: calc(100% - 125px);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.review h2{
+    margin-top: 20px;
+    color: #5b3c6f;
+}
 .libro {
-    position: relative;
-    width: 200px; /* Ajusta según el tamaño de tus portadas */
-    margin: 20px;
-    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
 }
 .portada {
-    width: 100%;
+    width: 250px;
     border-radius: 8px;
+}
+.informacion{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }

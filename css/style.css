@@ -15,6 +15,9 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    /*scroll en Firefox*/
+    scrollbar-color: #8e44ad rgba(245, 245, 245, 0.8);
+    scrollbar-width: thin;
 }
 /*Reglas del contenedor*/
 .contenedor{
@@ -55,8 +58,8 @@ nav ul li a{
     transition: font-size 0.2s ease-in-out, font-weight 0.3s; /*para que la transición sea más suave*/
 }
 /*Cuando se pasa el puntero por encima de los enlaces cambia el tamaño a más y se pone en negrita*/
-nav ul li a:hover {
-    font-size: 1.6em; /* Aumenta el tamaño al pasar el cursor */
+nav ul li a:hover{
+    font-size: 1.6em; /*aumenta el tamaño al pasar el cursor */
     font-weight: bold;
 }
 /*Reglas de las imagenes dentro del nav*/
@@ -65,8 +68,8 @@ nav img{
 }
 /*Reglas del LOGO*/
 nav img.logo{
-    position: static; /*Posicionarlo en referencia al contenedor*/
-    transform: translateX(-500%); /*Ajusta para centrarla perfectamente. Esto ajusta la imagen para que quede perfectamente centrada, ya que, al usar left: 50%, la imagen quedaría alineada a la mitad de su ancho, pero no centrada*/
+    position: static; /*posicionarlo en referencia al contenedor*/
+    transform: translateX(-500%); /*ajusta para centrarla perfectamente. Esto ajusta la imagen para que quede perfectamente centrada, ya que, al usar left: 50%, la imagen quedaría alineada a la mitad de su ancho, pero no centrada*/
 }
 /*Reglas de la imagen del modo oscuro en el nav*/
 nav img.oscuro{
@@ -87,6 +90,7 @@ nav img.oscuro:hover{
     align-items: center;
     flex-direction: column;
     text-align: center;
+    overflow-y: auto;
 }
 /*Al añadir la clase VISIBLE se hace visible el div que corresponda*/
 .visible{
@@ -126,9 +130,17 @@ button:hover{
 /*Reglas de la imagen de la gyoza*/
 .titulo img{
     position: absolute;
-    height: 250px;
-    top: -25px;
+    height: 350px;
+    top: -20px;
     z-index: 1;
+}
+/*Reglas del div en título con el h1 y el botón*/
+.titulo div{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 230px;
 }
 /*Reglas h1 de INFO*/
 .info h1{
@@ -207,18 +219,38 @@ footer.on{
     background-color: #8435c1;
 }
 
+/*Reglas para la barra de scroll usando WebKit (Chrome, Safari, Edge)*/
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    background: rgba(245, 245, 245, 0.8); /*fondo del track */
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb{
+    background: #8e44ad; /*parte movible */
+    border-radius: 10px;
+    border: 2px solid white; /*espacio interior */
+}
+:-webkit-scrollbar-thumb:hover{
+    background: #a66bbe;
+}
+
 /*------------------------------------------------------------------------------------------------------*/
 /*KEYFRAMES*/
-/*Se define el fade para que la transición al pulsar los botones sea más suave y tenga ese efecto*/
-@keyframes fade{
-    from{
+/*Se define el fade para que la transición al pulsar los botones sea más suave y tenga el efecto de zoom suave y cambio en la opacidad*/
+@keyframes fade {
+    from {
         opacity: 0;
+        transform: scale(0.95);
     }
-    to{
+    to {
         opacity: 1;
+        transform: scale(1);
     }
 }
-/* Definir la animación del texto del footer*/
+
+/*Definir la animación del texto del footer*/
 @keyframes movimiento {
     0% {
         transform: translateX(100%); /* Empieza desde la derecha */
@@ -232,17 +264,17 @@ footer.on{
 /*------------------------------------------------------------------------------------------------------*/
 /*DEFINICIÓN DE LOS MEDIA QUERIES*/
 /*Pantallas menores a 985px*/
-@media (max-width: 985px) {
-    nav {
+@media (max-width: 985px){
+    nav{
         display: flex;
         justify-content: space-between; 
         align-items: center;
         position: relative; /*asegura que los elementos se mantengan en el flujo*/
     }
-    nav img.logo {
+    nav img.logo{
         transform: translateX(-100%); /*mover el logo para poder centrarlo*/
     }
-    nav ul li a {
+    nav ul li a{
         text-decoration: none;
         font-size: 1.3em; /*se cambia el tamaño para que se acople al navegador*/
         transition: font-size 0.2s ease-in-out, font-weight 0.3s;
@@ -272,8 +304,8 @@ footer.on{
 
 }
 /*Para pantallas menores a 767px*/
-@media (max-width: 767px) {
-    nav {
+@media (max-width: 767px){
+    nav{
         padding: 0;
         display: flex;
         flex-direction: column-reverse; /*para colocar el logo y el modo oscuro encima de los enlaces*/
@@ -281,28 +313,28 @@ footer.on{
         align-items: center;
         position: relative;
     }
-    nav img.logo {
+    nav img.logo{
         transform: none; /*se quita el transform*/
         width: 40px; 
         height: auto; /*mantener la proporción*/
         margin: 2px 0;
     }
-    nav img.oscuro {
+    nav img.oscuro{
         width: 30px;
         height: auto;
         margin: 2px 2px 0 auto;; /*lo alinea a la derecha y deja algo de espacio en el top y el right*/
     }
-    nav ul {
+    nav ul{
         display: flex;
         justify-content: space-around; /*centrar los enlaces*/
         gap: 15px; /*cambiar el espacio entre los enlaces*/
         padding: 10px;
         width: 100%;
     }
-    nav ul li {
+    nav ul li{
         list-style: none;
     }
-    nav ul li a {
+    nav ul li a{
         text-decoration: none;
         font-size: 1.1em;
         transition: font-size 0.2s ease-in-out, font-weight 0.3s;
@@ -355,10 +387,13 @@ footer.on{
         top: 115px;
     }
 }
-@media (max-width: 660px) {
+@media (max-width: 660px){
     .titulo img{
-        height: 120px;
+        height: 150px;
         top: 3px;
+    }
+    .titulo div{
+        top: 150px;
     }
     h1{
         font-size: 3.5em;
