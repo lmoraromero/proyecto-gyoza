@@ -100,6 +100,7 @@ h1{
     color: #5b3c6f;
 }
 .titulo h1{
+    font-family: "Akaya Kanadaka", system-ui;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     position: relative;
     z-index: 2;
@@ -125,7 +126,7 @@ button:hover{
 /*Reglas de la imagen de la gyoza*/
 .titulo img{
     position: absolute;
-    height: 280px;
+    height: 250px;
     top: -25px;
     z-index: 1;
 }
