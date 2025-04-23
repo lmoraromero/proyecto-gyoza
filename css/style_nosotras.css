@@ -1,5 +1,6 @@
 /*-----------------------------------------------------------------------------*/
 /*PÁGINA DE 'NOSOTRAS'*/
+
 /*las tres secciones se hacen invisibles, .contenido tiene la clase .ver predeterminada*/
 .contenido, .uno, .dos{
     height: calc(100% - 125px);
@@ -102,66 +103,54 @@
 }
 
 /*MEDIA QUERY*/
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1024px){
     .contenido p,
     .uno p,
-    .dos p {
+    .dos p{
         font-size: 15px;
         margin: 10px 30px;
     }
-
-    h1, h2, h3 {
-        font-size: 2.5em;
-    }
-
-    .perfiles img {
+    .perfiles img{
         width: 300px;
     }
-
-    .uno img, .dos img {
+    .uno img, .dos img{
         width: 180px;
     }
-
-    .links img {
+    .links img{
         width: 28px;
         height: 28px;
     }
-
-    .uno, .dos {
+    .uno, .dos{
         overflow-y: auto;
     }
 }
-@media screen and (max-width: 767px) {
+
+@media screen and (max-width: 767px){
     .contenido p,
     .uno p,
-    .dos p {
+    .dos p{
         font-size: 14px;
         margin: 10px 20px;
     }
-     /* Imágenes de perfil en columna */
-    .perfiles {
+    /*cambiar la dirección de las imagenes*/
+    .perfiles{
         flex-direction: column;
         align-items: center;
     }
-
-    .ana, .laura {
+    .ana, .laura{
         width: 90%;
     }
-
-    .perfiles img {
+    .perfiles img{
         width: 90%;
     }
-
-    .uno img, .dos img {
+    .uno img, .dos img{
         width: 150px;
     }
-
-    .links img {
+    .links img{
         width: 25px;
         height: 25px;
     }
-
-    .uno, .dos {
+    .uno, .dos{
         overflow-y: auto;
     }
 }

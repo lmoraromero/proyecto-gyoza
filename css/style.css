@@ -80,23 +80,10 @@ nav img.oscuro{
 nav img.oscuro:hover{
     scale: 1.1;
 }
-/*Me aseguro de que el ícono del menú esté oculto en pantallas grandes */
+/*El ícono del menú está oculto en pantallas grandes */
 /* Icono de menú */
 nav .menu {
     display: none;  /* Ocultar el icono de menú por defecto */
-    cursor: pointer;
-}
-
-/* Botón de cierre del menú */
-nav .cerrar {
-    display: none;  /* Ocultar el botón de cierre por defecto */
-    border: none;
-    background-color: transparent;
-    color: #3e1f6e;
-    font-size: 2em;
-    position: absolute;
-    top: 20px;
-    right: 20px;
     cursor: pointer;
 }
 /*Reglas de TITULO e INFO*/
@@ -250,34 +237,34 @@ footer.on{
 /*------------------------------------------------------------------------------------------------------*/
 /*KEYFRAMES*/
 /*Se define el fade para que la transición al pulsar los botones sea más suave y tenga el efecto de zoom suave y cambio en la opacidad*/
-@keyframes fade {
-    from {
+@keyframes fade{
+    from{
         opacity: 0;
         transform: scale(0.95);
     }
-    to {
+    to{
         opacity: 1;
         transform: scale(1);
     }
 }
 
 /*Definir la animación del texto del footer*/
-@keyframes movimiento {
-    0% {
-        transform: translateX(100%); /* Empieza desde la derecha */
+@keyframes movimiento{
+    0%{
+        transform: translateX(100%); /*empieza desde la derecha*/
     }
-    100% {
-        transform: translateX(-100%); /* Termina en la izquierda */
+    100%{
+        transform: translateX(-100%); /*termina en la izquierda*/
     }
 }
 
 /*Definir la aniamción de desplegar el menú*/
-@keyframes desplegar {
-    from {
+@keyframes desplegar{
+    from{
         opacity: 0;
         transform: translateY(-10%);
     }
-    to {
+    to{
         opacity: 1;
         transform: translateY(0);
     }
@@ -285,10 +272,10 @@ footer.on{
 
 /*------------------------------------------------------------------------------------------------------*/
 /*DEFINICIÓN DE LOS MEDIA QUERIES*/
-/*Pantallas menores a 985px*/
-/* TABLET: entre 768px y 1024px */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-    nav {
+
+/*TABLET: entre 768px y 1024px*/
+@media screen and (min-width: 768px) and (max-width: 1024px){
+    nav{
         padding: 0;
         display: flex;
         flex-direction: column-reverse; /*para colocar el logo y el modo oscuro encima de los enlaces*/
@@ -296,130 +283,122 @@ footer.on{
         align-items: center;
         position: relative;
     }
-    nav img.logo {
+    nav img.logo{
         transform: none;  /*se quita el transform*/
         width: 40px;
         height: auto; /*mantener la proporción*/
         margin: 2px 0;
     }
-    nav img.oscuro {
+    nav img.oscuro{
         width: 30px;
         height: auto;
         margin: 2px 2px 0 auto; /*lo alinea a la derecha y deja algo de espacio en el top y el right*/
         align-self: flex-end;
     }
-    nav ul {
+    nav ul{
         display: flex;
         justify-content: space-around; /*centrar los enlaces*/
         gap: 15px; /*cambiar el espacio entre los enlaces*/
         padding: 10px;
         width: 100%;
     }
-    nav ul li a {
+    nav ul li a{
         font-size: 1.1em;
     }
     nav ul li a:hover{
         font-size: 1.2em; /*aumenta el tamaño al pasar el cursor */
         font-weight: bold;
     }
-    /* Tamaño del título principal h1 */
-    h1 {
-        font-size: 3.5em;  /* Ajusta el tamaño para dispositivos más pequeños */
+    /*tamaño del título principal h1*/
+    h1{
+        font-size: 3.5em;  
     }
-    .info h1 {
+    .info h1{
         font-size: 2.5em;
     }
-
-    /* Estilo de los botones */
-    button {
-        font-size: 1em;  /* Ajusta el tamaño de la fuente */
-        padding: 8px 16px;  /* Ajusta el tamaño del botón */
+    /*estilo de los botones*/
+    button{
+        font-size: 1em;  
+        padding: 8px 16px; 
     }
-
-    /* Estilo de los párrafos */
-    p {
+    /*estilo de los párrafos*/
+    p{
         font-size: 14px;
         margin: 10px 30px;
     }
-    .titulo, .info {
+    .titulo, .info{
         overflow-y: auto;
     }
 }
 
 /*Para pantallas menores a 767px*/
-/* Media Query para pantallas más pequeñas que 768px (móviles y tabletas pequeñas) */
 @media (max-width: 767px) {
-    /* Ajuste para reordenar los elementos del nav */
-    nav {
-        position: relative; /* IMPORTANTE: referencia para el ul */
+    /*reordenar los elementos del nav*/
+    nav{
+        position: relative; /*referencia para el ul*/
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        z-index: 100; /* opcional pero recomendable */
     }
-    /* Mostrar icono del menú */
-    nav .menu {
+    /*mostrar icono del menú*/
+    nav .menu{
         display: block;
     }
-
-    /* Ocultar los enlaces por defecto */
-    nav ul {
+    /*ocultar los enlaces*/
+    nav ul{
         display: none;
         flex-direction: column;
         background-color: rgba(255, 255, 255, 0.7);
         position: absolute;
-        top: 60px; /* debajo del nav */
+        top: 60px; /*debajo del nav*/
         left: 0;
         width: 100%;
         padding: 10px 0;
         z-index: 10;
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-
-    /* Mostrar el menú cuando tenga la clase 'activo' */
-    nav ul.activo {
+    /*mostrar el menú cuando tenga la clase activo*/
+    nav ul.activo{
         display: flex;
         animation: desplegar 0.3s ease-out;
     }
-    nav ul li {
+    nav ul li{
         margin: 10px 0;
         text-align: center;
     }
-    nav ul li a {
+    nav ul li a{
         font-size: 1.2em;
     }
+    /*quitar hover*/
     nav ul li a:hover{
-        font-weight: bold;
+        font-weight: normal;
+        font-size: 1.2em;
     }
-    nav img.logo {
+    nav img.logo{
         transform: none;
         height: 35px;
     }
-
     nav img.menu,
-    nav img.oscuro {
+    nav img.oscuro{
         height: 35px;
     }
     
     /* TITULOS Y PÁRRAFOS */
-    h1 {
-        font-size: 2.5em; /* más pequeño */
+    h1{
+        font-size: 2.5em; 
     }
-    .info h1 {
+    .info h1{
         font-size: 2em;
     }
-
-    p {
+    p{
         font-size: 14px;
         margin: 10px 20px;
     }
-
-    button {
+    button{
         font-size: 1em;
         padding: 8px 16px;
     }
-    /* Ajustar la posición del contenedor del h1 y botón */
-    .titulo div {
+    .titulo div{
         top: 180px;
     }
 }

@@ -1,10 +1,10 @@
-
 /*-----------------------------------------------------------------------------*/
+
 /*PÁGINA RESEÑAS*/
 .enlaces{
     width: 100%;
     height: calc(100% - 125px);
-    overflow-y: auto; /*Permite que si hay muchos elementos se pueda hacer scroll*/
+    overflow-y: auto; /*permite que si hay muchos elementos se pueda hacer scroll*/
 }
 .button{
     display: flex;
@@ -42,32 +42,33 @@
     color: #f0a6ca;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-    .button {
+@media screen and (min-width: 768px) and (max-width: 1024px){
+    .button{
         font-size: 11px;
     }
-    .libros li {
+    .libros li{
         font-size: 15px;
         padding: 11px;
     }
-    .enlaces {
+    .enlaces{
         overflow-y: auto;
     }
 }
-@media screen and (max-width: 767px) {
-    .button {
+@media screen and (max-width: 767px){
+    .button{
         font-size: 10px;
-        flex-direction: column; /* botones uno debajo del otro si fuera necesario */
+        flex-direction: column; /*botones uno debajo del otro*/
         gap: 10px;
     }
-    .libros li {
+    .libros li{
         font-size: 14px;
         padding: 10px;
     }
-    .libros li:hover {
-        scale: 1; /* anulamos el efecto hover */
+    /*quitar hover*/
+    .libros li:hover{
+        scale: 1;
     }
-    .enlaces {
-        overflow-y: auto; /* mantener scroll */
+    .enlaces{
+        overflow-y: auto; 
     }
 }
