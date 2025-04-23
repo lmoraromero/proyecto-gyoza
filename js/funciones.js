@@ -3,6 +3,8 @@ const info = document.querySelector(".info");
 const botonConocer = document.querySelector(".titulo button");
 const botonVolver = document.querySelector(".info button");
 const modoOscuro = document.querySelector("img.oscuro");
+const menuIcon = document.querySelector(".menu");
+const menu = document.querySelector("nav ul");
 
 const contenido = document.querySelector(".contenido");
 const imgAna = document.querySelector(".ana img");
@@ -189,6 +191,13 @@ if (itemsLista && itemsLista.length > 0 && listaOriginal && lista && botonTitulo
     botonTitulo.addEventListener("click", ordenarTitulo);
     botonAutor.addEventListener("click", ordenarAutor);
     botonReset.addEventListener('click', restablecer);
+}
+
+// Añadir evento al ícono del menú para mostrar u ocultar el menú
+if (menuIcon && menu) {
+    menuIcon.addEventListener("click", () => {
+        menu.classList.toggle("activo"); // Alterna la clase 'activo' para mostrar/ocultar el menú
+    });
 }
 
 //Cambiar al modo oscuro

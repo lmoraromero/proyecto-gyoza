@@ -100,3 +100,68 @@
     background-color: transparent;
     scale: 1.1;
 }
+
+/*MEDIA QUERY*/
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .contenido p,
+    .uno p,
+    .dos p {
+        font-size: 15px;
+        margin: 10px 30px;
+    }
+
+    h1, h2, h3 {
+        font-size: 2.5em;
+    }
+
+    .perfiles img {
+        width: 300px;
+    }
+
+    .uno img, .dos img {
+        width: 180px;
+    }
+
+    .links img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .uno, .dos {
+        overflow-y: auto;
+    }
+}
+@media screen and (max-width: 767px) {
+    .contenido p,
+    .uno p,
+    .dos p {
+        font-size: 14px;
+        margin: 10px 20px;
+    }
+     /* Imágenes de perfil en columna */
+    .perfiles {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ana, .laura {
+        width: 90%;
+    }
+
+    .perfiles img {
+        width: 90%;
+    }
+
+    .uno img, .dos img {
+        width: 150px;
+    }
+
+    .links img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .uno, .dos {
+        overflow-y: auto;
+    }
+}

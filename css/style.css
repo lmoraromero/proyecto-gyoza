@@ -80,6 +80,25 @@ nav img.oscuro{
 nav img.oscuro:hover{
     scale: 1.1;
 }
+/*Me aseguro de que el ícono del menú esté oculto en pantallas grandes */
+/* Icono de menú */
+nav .menu {
+    display: none;  /* Ocultar el icono de menú por defecto */
+    cursor: pointer;
+}
+
+/* Botón de cierre del menú */
+nav .cerrar {
+    display: none;  /* Ocultar el botón de cierre por defecto */
+    border: none;
+    background-color: transparent;
+    color: #3e1f6e;
+    font-size: 2em;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
 /*Reglas de TITULO e INFO*/
 .titulo, .info{
     position: absolute;
@@ -127,20 +146,12 @@ button:hover{
     scale: 1.2;
     font-weight: bold;
 }
-/*Reglas de la imagen de la gyoza*/
-.titulo img{
-    position: absolute;
-    height: 350px;
-    top: -20px;
-    z-index: 1;
-}
 /*Reglas del div en título con el h1 y el botón*/
 .titulo div{
     position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
-    top: 230px;
 }
 /*Reglas h1 de INFO*/
 .info h1{
@@ -260,52 +271,24 @@ footer.on{
     }
 }
 
+/*Definir la aniamción de desplegar el menú*/
+@keyframes desplegar {
+    from {
+        opacity: 0;
+        transform: translateY(-10%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 /*------------------------------------------------------------------------------------------------------*/
 /*DEFINICIÓN DE LOS MEDIA QUERIES*/
 /*Pantallas menores a 985px*/
-@media (max-width: 985px){
-    nav{
-        display: flex;
-        justify-content: space-between; 
-        align-items: center;
-        position: relative; /*asegura que los elementos se mantengan en el flujo*/
-    }
-    nav img.logo{
-        transform: translateX(-100%); /*mover el logo para poder centrarlo*/
-    }
-    nav ul li a{
-        text-decoration: none;
-        font-size: 1.3em; /*se cambia el tamaño para que se acople al navegador*/
-        transition: font-size 0.2s ease-in-out, font-weight 0.3s;
-    }
-    nav ul li a:hover{ /*cambio también en el hover para que vaya en proporción*/
-        font-size: 1.5em;
-        font-weight: bold;
-    }
-    .titulo, .info{
-        height: calc(100vh - 130px);
-    }
-    .titulo img{
-        height: 200px;
-        top: -20px;
-    }
-    h1{
-        font-size: 5em;
-        padding: 10px;
-    }
-    .info h1{
-        font-size: 3.5em;
-        padding: 10px;
-    }
-    p{
-        font-size: 16px;
-    }
-
-}
-/*Para pantallas menores a 767px*/
-@media (max-width: 767px){
-    nav{
+/* TABLET: entre 768px y 1024px */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    nav {
         padding: 0;
         display: flex;
         flex-direction: column-reverse; /*para colocar el logo y el modo oscuro encima de los enlaces*/
@@ -313,99 +296,130 @@ footer.on{
         align-items: center;
         position: relative;
     }
-    nav img.logo{
-        transform: none; /*se quita el transform*/
-        width: 40px; 
+    nav img.logo {
+        transform: none;  /*se quita el transform*/
+        width: 40px;
         height: auto; /*mantener la proporción*/
         margin: 2px 0;
     }
-    nav img.oscuro{
+    nav img.oscuro {
         width: 30px;
         height: auto;
-        margin: 2px 2px 0 auto;; /*lo alinea a la derecha y deja algo de espacio en el top y el right*/
+        margin: 2px 2px 0 auto; /*lo alinea a la derecha y deja algo de espacio en el top y el right*/
+        align-self: flex-end;
     }
-    nav ul{
+    nav ul {
         display: flex;
         justify-content: space-around; /*centrar los enlaces*/
         gap: 15px; /*cambiar el espacio entre los enlaces*/
         padding: 10px;
         width: 100%;
     }
-    nav ul li{
-        list-style: none;
-    }
-    nav ul li a{
-        text-decoration: none;
+    nav ul li a {
         font-size: 1.1em;
-        transition: font-size 0.2s ease-in-out, font-weight 0.3s;
     }
     nav ul li a:hover{
-        font-size: 1.2em;
+        font-size: 1.2em; /*aumenta el tamaño al pasar el cursor */
         font-weight: bold;
     }
-    .titulo, .info{
-        height: calc(100vh - 198px);
+    /* Tamaño del título principal h1 */
+    h1 {
+        font-size: 3.5em;  /* Ajusta el tamaño para dispositivos más pequeños */
     }
-    .titulo img{
-        height: 150px;
-        top: 3px;
+    .info h1 {
+        font-size: 2.5em;
     }
-    h1{
-        font-size: 4em;
-        padding: 10px;
+
+    /* Estilo de los botones */
+    button {
+        font-size: 1em;  /* Ajusta el tamaño de la fuente */
+        padding: 8px 16px;  /* Ajusta el tamaño del botón */
     }
-    .info h1{
-        font-size: 3em;
-        padding: 10px;
-    }
-    p{
+
+    /* Estilo de los párrafos */
+    p {
         font-size: 14px;
+        margin: 10px 30px;
     }
-    /*PÁGINA NOSOTRAS*/
-    .contenido, .uno, .dos{
-        height: calc(100% - 190px);
-    }
-    .uno p, .dos p{
-        font-size: 12px;
-        margin: 10px 40px;
-    }
-    .uno img, .dos img{
-        width: 100px; 
-        height: auto;
-    }
-    .enlaces img{
-        width: 30px;   
-        height: 30px;   
-    }
-    .perfiles{
-        flex-direction: column;
-    }
-    .perfiles img{
-        width: 200px; 
-    }
-    .flecha{
-        top: 115px;
+    .titulo, .info {
+        overflow-y: auto;
     }
 }
-@media (max-width: 660px){
-    .titulo img{
-        height: 150px;
-        top: 3px;
+
+/*Para pantallas menores a 767px*/
+/* Media Query para pantallas más pequeñas que 768px (móviles y tabletas pequeñas) */
+@media (max-width: 767px) {
+    /* Ajuste para reordenar los elementos del nav */
+    nav {
+        position: relative; /* IMPORTANTE: referencia para el ul */
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100; /* opcional pero recomendable */
     }
-    .titulo div{
-        top: 150px;
+    /* Mostrar icono del menú */
+    nav .menu {
+        display: block;
     }
-    h1{
-        font-size: 3.5em;
-        padding: 10px;
-    }
-    footer{
-        font-size: 1em;
-    }
-    .perfiles{
+
+    /* Ocultar los enlaces por defecto */
+    nav ul {
+        display: none;
         flex-direction: column;
+        background-color: rgba(255, 255, 255, 0.7);
+        position: absolute;
+        top: 60px; /* debajo del nav */
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
+        z-index: 10;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-    .perfiles img{
-        width: 150px; 
+
+    /* Mostrar el menú cuando tenga la clase 'activo' */
+    nav ul.activo {
+        display: flex;
+        animation: desplegar 0.3s ease-out;
+    }
+    nav ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+    nav ul li a {
+        font-size: 1.2em;
+    }
+    nav ul li a:hover{
+        font-weight: bold;
+    }
+    nav img.logo {
+        transform: none;
+        height: 35px;
+    }
+
+    nav img.menu,
+    nav img.oscuro {
+        height: 35px;
+    }
+    
+    /* TITULOS Y PÁRRAFOS */
+    h1 {
+        font-size: 2.5em; /* más pequeño */
+    }
+    .info h1 {
+        font-size: 2em;
+    }
+
+    p {
+        font-size: 14px;
+        margin: 10px 20px;
+    }
+
+    button {
+        font-size: 1em;
+        padding: 8px 16px;
+    }
+    /* Ajustar la posición del contenedor del h1 y botón */
+    .titulo div {
+        top: 180px;
     }
 }

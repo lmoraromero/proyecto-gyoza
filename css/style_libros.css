@@ -41,3 +41,33 @@
 .enlaces li a.on{
     color: #f0a6ca;
 }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .button {
+        font-size: 11px;
+    }
+    .libros li {
+        font-size: 15px;
+        padding: 11px;
+    }
+    .enlaces {
+        overflow-y: auto;
+    }
+}
+@media screen and (max-width: 767px) {
+    .button {
+        font-size: 10px;
+        flex-direction: column; /* botones uno debajo del otro si fuera necesario */
+        gap: 10px;
+    }
+    .libros li {
+        font-size: 14px;
+        padding: 10px;
+    }
+    .libros li:hover {
+        scale: 1; /* anulamos el efecto hover */
+    }
+    .enlaces {
+        overflow-y: auto; /* mantener scroll */
+    }
+}

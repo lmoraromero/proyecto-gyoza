@@ -73,3 +73,76 @@ h1.on, h2.on, h3.on{
 p.on{
     color: #d4c0f3;
 }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .generador h1 {
+        font-size: 2.5em;
+    }
+
+    .generador p,
+    .generador .resultado {
+        font-size: 1.2em;
+        margin: 0 30px 25px 30px;
+    }
+
+    .generador form input[type="text"] {
+        width: 85%;
+        padding: 11px;
+        font-size: 1em;
+    }
+
+    .generador .botones input[type="submit"],
+    .generador .botones input[type="button"] {
+        font-size: 1em;
+        padding: 10px;
+    }
+
+    .generador {
+        overflow-y: auto;
+    }
+}
+@media screen and (max-width: 767px) {
+    .generador h1 {
+        font-size: 2em;
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+
+    .generador p,
+    .generador .resultado {
+        font-size: 1em;
+        margin: 0 20px 20px 20px;
+    }
+
+    .generador form input[type="text"] {
+        width: 90%;
+        padding: 10px;
+        font-size: 0.9em;
+    }
+
+    .generador .botones {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .generador .botones input[type="submit"],
+    .generador .botones input[type="button"] {
+        font-size: 0.9em;
+        padding: 8px;
+        transition: none;
+        scale: 1;
+    }
+
+    /* Quitar hover en móviles */
+    .generador .botones input[type="submit"]:hover,
+    .generador .botones input[type="button"]:hover {
+        scale: 1;
+        font-weight: normal;
+        background-color: #a992ca;
+    }
+
+    .generador {
+        overflow-y: auto;
+    }
+}
