@@ -14,20 +14,20 @@ const dos = document.querySelector(".dos");
 const flechas = document.querySelectorAll(".flecha");
 
 const inputTitulo = document.querySelector('input[type="text"]');
-const botonAdd = document.querySelector('.add');
-const botonGenerate = document.querySelector('.generate');
-const botonLimpiar = document.querySelector('.clear');
-const resultado = document.querySelector('.resultado');
-const mensaje = document.querySelector('h3');
+const botonAdd = document.querySelector(".add");
+const botonGenerate = document.querySelector(".generate");
+const botonLimpiar = document.querySelector(".clear");
+const resultado = document.querySelector(".resultado");
+const mensaje = document.querySelector("h3");
 
 const botonTitulo = document.querySelector(".title");
-const botonAutor = document.querySelector('.author');
-const botonReset = document.querySelector('.reset');
+const botonAutor = document.querySelector(".author");
+const botonReset = document.querySelector(".reset");
 
-//Primero verifico si se encuentran los botones para que se pueda ejecutar el resto del código
+//Primero verifico si se encuentran los botones para que se pueda ejecutar el resto del código:
 
 if(botonConocer && botonVolver && titulo && info) {
-    //Botones cambian a la clase visible, removiendo la clase al anterior
+    //botones cambian a la clase visible, removiendo la clase anterior
     botonConocer.addEventListener("click", () => {
         titulo.classList.remove("visible");
         info.classList.add("visible");
@@ -40,26 +40,26 @@ if(botonConocer && botonVolver && titulo && info) {
 }
 
 if(imgAna && imgLaura && contenido && uno && dos && flechas) {
-    //Ir a la sección de Ana
+    //ir a la sección de Ana
     imgAna.addEventListener("click", () => {
         contenido.classList.remove("ver");
         uno.classList.add("ver");
     });
 
-    //Ir a la sección de Laura
+    //ir a la sección de Laura
     imgLaura.addEventListener("click", () => {
         contenido.classList.remove("ver");
         dos.classList.add("ver");
     });
 
-    //Volver hacia atrás
+    //volver hacia atrás
     flechas.forEach(flecha => {
         flecha.addEventListener("click", () => {
-            // Eliminar la clase "ver" de las secciones uno y dos
+            //eliminar la clase ver de las secciones uno y dos
             uno.classList.remove("ver");
             dos.classList.remove("ver");
 
-            // Agregar la clase "ver" a la sección contenido
+            //agregar la clase ver a la sección contenido
             contenido.classList.add("ver");
         });
     });
@@ -69,7 +69,7 @@ if(botonAdd && botonGenerate && botonLimpiar && inputTitulo && mensaje && result
     //añadir títulos a un array para luego poder generarlos aleatoriamente 
     let titulos = [];
 
-    botonAdd.addEventListener('click', evento => {
+    botonAdd.addEventListener("click", evento => {
         evento.preventDefault();
 
         const titulo = inputTitulo.value.trim(); 
@@ -88,32 +88,32 @@ if(botonAdd && botonGenerate && botonLimpiar && inputTitulo && mensaje && result
         }
     });
 
-    // Generar aleatoriamente los títulos del array
-    botonGenerate.addEventListener('click', evento => {
+    //generar aleatoriamente los títulos del array
+    botonGenerate.addEventListener("click", evento => {
         evento.preventDefault(); 
         if (titulos.length > 0) {
-            // Seleccionar un índice aleatorio
+            //seleccionar un índice aleatorio
             const indiceAleatorio = Math.floor(Math.random() * titulos.length);
             const tituloAleatorio = titulos[indiceAleatorio];
 
-            // Mostrar el título generado en el <h2>
+            //mostrar el título generado en el h2
             resultado.innerText = `Título seleccionado: ${tituloAleatorio}. ¡Feliz lectura!⭐`;
 
-            // Limpiar el mensaje en <h3>
+            //limpiar el mensaje en h3
             mensaje.innerText = "";
         } else {
             resultado.innerText = "Por favor, añade títulos primero.";
         }
     });
 
-    // Limpiar el Array por si se quiere generar nuevos títulos
+    //limpiar el array por si se quiere generar nuevos títulos
     botonLimpiar.addEventListener('click', evento => {
         evento.preventDefault(); 
-        // Limpiar el array de títulos
+        //limpiar el array de títulos
         titulos = [];
-        // Limpiar el input de texto
+        //limpiar el input de texto
         inputTitulo.value = "";
-        // Limpiar el mensaje en <h3> y <h2>
+        //limpiar el mensaje en h3 y h2
         mensaje.innerText = "";
         resultado.innerText = ""; 
     });
@@ -190,49 +190,49 @@ if (itemsLista && itemsLista.length > 0 && listaOriginal && lista && botonTitulo
 
     botonTitulo.addEventListener("click", ordenarTitulo);
     botonAutor.addEventListener("click", ordenarAutor);
-    botonReset.addEventListener('click', restablecer);
+    botonReset.addEventListener("click", restablecer);
 }
 
-// Añadir evento al ícono del menú para mostrar u ocultar el menú
+//añadir evento al ícono del menú para mostrar u ocultar el menú
 if (menuIcon && menu) {
     menuIcon.addEventListener("click", () => {
         menu.classList.toggle("activo"); // Alterna la clase 'activo' para mostrar/ocultar el menú
     });
 }
 
-//Cambiar al modo oscuro
+//cambiar al modo oscuro
 modoOscuro.addEventListener("click", () => {
     //compruebo si el icono de la luna se muestra
-    if (modoOscuro.src.includes('img/moon.png')) {
+    if (modoOscuro.src.includes("img/moon.png")) {
         //se cambia la imagen
-        modoOscuro.src = 'img/star.png';
+        modoOscuro.src = "img/star.png";
         //añadir la clase .on a todos los elementos
-        document.querySelector('body').classList.add('on');
-        document.querySelector('.contenedor').classList.add('on');
-        document.querySelector('nav').classList.add('on');
+        document.querySelector("body").classList.add("on");
+        document.querySelector(".contenedor").classList.add("on");
+        document.querySelector("nav").classList.add("on");
         
         //h1, h2, p, nav ul li a, button y footer
-        document.querySelectorAll('h1, h2', 'h3').forEach(item => item.classList.add('on'));
-        document.querySelectorAll('p').forEach(item => item.classList.add('on'));
-        document.querySelectorAll('nav ul li a').forEach(item => item.classList.add('on'));
-        document.querySelectorAll('button').forEach(item => item.classList.add('on'));
-        document.querySelectorAll('.enlaces li a').forEach(item => item.classList.add('on'));
-        document.querySelector('footer').classList.add('on');
+        document.querySelectorAll("h1, h2", "h3").forEach(item => item.classList.add("on"));
+        document.querySelectorAll("p").forEach(item => item.classList.add("on"));
+        document.querySelectorAll("nav ul li a").forEach(item => item.classList.add("on"));
+        document.querySelectorAll("button").forEach(item => item.classList.add("on"));
+        document.querySelectorAll(".enlaces li a").forEach(item => item.classList.add("on"));
+        document.querySelector("footer").classList.add("on");
     } else {
         //vuelve a la imagen moon
-        modoOscuro.src = 'img/moon.png';
+        modoOscuro.src = "img/moon.png";
         
         //quitar la clase .on para volver al modo claro
-        document.querySelector('body').classList.remove('on');
-        document.querySelector('.contenedor').classList.remove('on');
-        document.querySelector('nav').classList.remove('on');
-
+        document.querySelector("body").classList.remove("on");
+        document.querySelector(".contenedor").classList.remove("on");
+        document.querySelector("nav").classList.remove("on");
+    
         //h1, h2, p, nav ul li a, button y footer
-        document.querySelectorAll('h1, h2', 'h3').forEach(item => item.classList.remove('on'));
-        document.querySelectorAll('p').forEach(item => item.classList.remove('on'));
-        document.querySelectorAll('nav ul li a').forEach(item => item.classList.remove('on'));
-        document.querySelectorAll('button').forEach(item => item.classList.remove('on'));
-        document.querySelectorAll('.enlaces li a').forEach(item => item.classList.remove('on'));
-        document.querySelector('footer').classList.remove('on');
+        document.querySelectorAll("h1", "h2", "h3").forEach(item => item.classList.remove("on"));
+        document.querySelectorAll("p").forEach(item => item.classList.remove("on"));
+        document.querySelectorAll("nav ul li a").forEach(item => item.classList.remove("on"));
+        document.querySelectorAll("button").forEach(item => item.classList.remove("on"));
+        document.querySelectorAll(".enlaces li a").forEach(item => item.classList.remove("on"));
+        document.querySelector("footer").classList.remove("on");
     }
 });
