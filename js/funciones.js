@@ -201,18 +201,37 @@ if (menuIcon && menu) {
 }
 
 //cambiar al modo oscuro
+//al cargar la página, aplica el modo oscuro si ya estaba activado usando localStorage
+if (localStorage.getItem("modo") === "oscuro") {
+    //cambia imagen
+    modoOscuro.src = "img/star.png";
+
+    //se añade clase on a los elementos
+    document.querySelector("body").classList.add("on");
+    document.querySelector(".contenedor").classList.add("on");
+    document.querySelector("nav").classList.add("on");
+
+    document.querySelectorAll("h1, h2, h3").forEach(item => item.classList.add("on"));
+    document.querySelectorAll("p").forEach(item => item.classList.add("on"));
+    document.querySelectorAll("nav ul li a").forEach(item => item.classList.add("on"));
+    document.querySelectorAll("button").forEach(item => item.classList.add("on"));
+    document.querySelectorAll(".enlaces li a").forEach(item => item.classList.add("on"));
+    document.querySelector("footer").classList.add("on");
+}
+
+//cambiar entre modo claro/oscuro con el botón
 modoOscuro.addEventListener("click", () => {
-    //compruebo si el icono de la luna se muestra
-    if (modoOscuro.src.includes("img/moon.png")) {
+    if (modoOscuro.src.includes("img/moon.png")) { //está en modo claro para cambiar 
         //se cambia la imagen
         modoOscuro.src = "img/star.png";
+        localStorage.setItem("modo", "oscuro"); //se guarda en localStorage que se cambia a modo oscuro
+
         //añadir la clase .on a todos los elementos
         document.querySelector("body").classList.add("on");
         document.querySelector(".contenedor").classList.add("on");
         document.querySelector("nav").classList.add("on");
-        
-        //h1, h2, p, nav ul li a, button y footer
-        document.querySelectorAll("h1, h2", "h3").forEach(item => item.classList.add("on"));
+
+        document.querySelectorAll("h1, h2, h3").forEach(item => item.classList.add("on"));
         document.querySelectorAll("p").forEach(item => item.classList.add("on"));
         document.querySelectorAll("nav ul li a").forEach(item => item.classList.add("on"));
         document.querySelectorAll("button").forEach(item => item.classList.add("on"));
@@ -221,14 +240,14 @@ modoOscuro.addEventListener("click", () => {
     } else {
         //vuelve a la imagen moon
         modoOscuro.src = "img/moon.png";
-        
+        localStorage.setItem("modo", "claro"); //se guarda en localStorage que se cambia a modo oscuro
+
         //quitar la clase .on para volver al modo claro
         document.querySelector("body").classList.remove("on");
         document.querySelector(".contenedor").classList.remove("on");
         document.querySelector("nav").classList.remove("on");
-    
-        //h1, h2, p, nav ul li a, button y footer
-        document.querySelectorAll("h1", "h2", "h3").forEach(item => item.classList.remove("on"));
+
+        document.querySelectorAll("h1, h2, h3").forEach(item => item.classList.remove("on"));
         document.querySelectorAll("p").forEach(item => item.classList.remove("on"));
         document.querySelectorAll("nav ul li a").forEach(item => item.classList.remove("on"));
         document.querySelectorAll("button").forEach(item => item.classList.remove("on"));
