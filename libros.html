@@ -30,28 +30,29 @@
             <p>Disclaimer: es posible que encuentres spoilers en las reseñas. Ve con precaución 🕵️.</p>
             <section class="libros">
                 <ul>
-                    <li><a href="">Donde no puedas encontrarme - <em>Tamara Molina</em></a></li>
-                    <li><a href="">Almendra - <em>Won-Pyung Sohn</em></a></li>
-                    <li><a href="">Érase una vez un corazón roto - <em>Stephanie Garber</em></a></li>
-                    <li><a href="">Un reino de promesas malditas - <em>Lexi Ryan</em></a></li>
-                    <li><a href="">Todos los ángeles del infierno - <em>Miriam Mosquera</em></a></li>
-                    <li><a href="">Aprendiz del villano - <em>Hannah Nicole Maehrer</em></a></li>
-                    <li><a href="">Alas de sangre - <em>Rebecca Yarros</em></a></li>
-                    <li><a href="">Alas de Hierro - <em>Rebecca Yarros</em></a></li>
-                    <li><a href="">Un corazón por Navidad - <em>Sophie Jomain</em></a></li>
-                    <li><a href="">El vals de la bruja - <em>Belén Martínez</em></a></li>
-                    <li><a href="">Alas de Ónix - <em>Rebecca Yarros</em></a></li>
-                    <li><a href="">Vamos a morir todos - <em>Emily Austin</em></a></li>
-                    <li><a href="">Black Bird Academy: Muerte a la oscuridad - <em>Stella Tack</em></a></li>
-                    <li><a href="">No confíes en Asher Hall - <em>Myriam M. Lejardi</em></a></li>
-                    <li><a href="">Misha Zhukov debe morir - <em>Myriam M. Lejardi</em></a></li>
-                    <li><a href="">La sanadora de Zalindov - <em>Lynette Noni</em></a></li>
+                    
                 </ul>
             </section>
         </section>
         <footer>
             <p>LECTURA ACTUAL... <span>El Alma del Brujo - Belén Martínez ♥️🧙</span></p>
         </footer>
+        <script>
+
+            fetch("datos/resenas.json")
+            .then(respuesta => respuesta.json())
+            .then(libros => {
+                const ul = document.querySelector(".libros ul");
+                ul.innerHTML = "";
+
+                libros.forEach(libro => {
+                    const li = document.createElement("li");
+                    li.innerHTML = `<a href="review.html?id=${libro.id}">${libro.titulo} - <em>${libro.autor_libro}</em></a>`;
+                    ul.appendChild(li);
+                });
+            });
+
+        </script>
     </section>
 </body>
 </html>

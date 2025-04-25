@@ -6,7 +6,7 @@
     <title>Document</title>
     <link href="https://fonts.googleapis.com/css2?family=Lekton:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"> <!--Lekton-->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/style_resenas.css">
+    <link rel="stylesheet" href="css/style_review.css">
 </head>
 <body>
     <section class="contenedor">
@@ -51,7 +51,37 @@
     </section>
     <script>
 
-        console.log(window.location.href)
+        const params = new URLSearchParams(window.location.search); //crea un objeto para poder trabajar con los parámetros de la URL. Y además devuelve la parte de la URL que sigue al signo ? (el query string)
+        const id = params.get("id"); //extrae el parámetro id de la URL
+
+        fetch("datos/resenas.json")
+        .then(respuesta => respuesta.json())
+        .then(libros => {
+            const libro = libros.find(i => i.id == id); //busca el primer elemento que cumpla con al condición, es decir busca el id del libro que sea igual que la url
+            if(!libro) return; //si no encuentra el libro detiene el código
+
+            //completar la información en la página
+            document.querySelector("h2").innerText = libro.titulo;
+
+            const portada = document.querySelector(".portada")
+            portada.src = `portadas/${libro.id}.jpg`; //utiliza el id del libro para buscar la portada
+
+            const info = document.querySelector(".informacion");
+            info.innerHTML = `
+                <p><strong>Autor/a:</strong> ${libro.autor_libro}</p>
+                <p><strong>Género:</strong> ${libro.genero}</p>
+                <p><strong>Páginas:</strong> ${libro.paginas}</p>
+                <p><strong>Fecha de publicación:</strong> ${libro.fecha_publicacion}</p>
+                <p><strong>Leído en:</strong> ${libro.leido_en}</p>
+                `;
+
+            const [ana, laura] = libro.resenas;
+            document.querySelector(".a .puntuacion").innerText = ana.puntuacion;
+            document.querySelector(".a p:last-of-type").innerText = ana.contenido;
+            document.querySelector(".l .puntuacion").innerText = laura.puntuacion;
+            document.querySelector(".l p:last-of-type").innerText = laura.contenido;
+
+        });
 
     </script>
 </body>

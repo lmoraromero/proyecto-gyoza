@@ -40,6 +40,7 @@
 }
 .libros a{
     text-decoration: none;
+    color: #5b3c6f;
 }
 .enlaces li a.on{
     color: #f0a6ca;
