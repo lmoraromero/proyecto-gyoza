@@ -382,6 +382,10 @@ footer.on{
     nav img.oscuro{
         height: 35px;
     }
+    .info{
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
     
     /* TITULOS Y PÁRRAFOS */
     h1{
@@ -400,5 +404,10 @@ footer.on{
     }
     .titulo div{
         top: 180px;
+    }
+}
+@media (max-width: 370px){
+    .info{
+        padding-top: calc(397px + 20px);
     }
 }

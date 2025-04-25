@@ -152,5 +152,12 @@
     }
     .uno, .dos{
         overflow-y: auto;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    @media (max-width: 370px){
+        .uno, .dos{
+            padding-top: calc(397px + 20px);
+        }
     }
 }

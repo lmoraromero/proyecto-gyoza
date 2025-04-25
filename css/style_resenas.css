@@ -20,11 +20,45 @@
     margin-top: 20px;
 }
 .portada {
-    width: 250px;
-    border-radius: 8px;
+    width: 300px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 .informacion{
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
+.resena {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.resena div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 250px;
+    text-align: center;
+}
+
+.resena img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.puntuacion {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #e28ec4;
+}
+
+
