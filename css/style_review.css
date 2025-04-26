@@ -70,6 +70,8 @@
         padding-bottom: 90px;
     }
 }
+
+/*Hace que portada e información quede una encima de otra*/
 @media (max-width: 767px){
     .libro {
         flex-direction: column;

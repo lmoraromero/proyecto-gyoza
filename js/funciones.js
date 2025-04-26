@@ -80,7 +80,7 @@ if(botonAdd && botonGenerate && botonLimpiar && inputTitulo && mensaje && result
 
             //limpiar el input después de añadir
             inputTitulo.value = "";
-            mensaje.innerText = "Se ha añadido: " + titulo;
+            mensaje.innerText = "Se ha añadido: " + titulo.toUpperCase();
             mensaje.style.color = "#8f75b1";
         } else {
             mensaje.innerText = "Por favor, escribe un título.";
@@ -97,7 +97,7 @@ if(botonAdd && botonGenerate && botonLimpiar && inputTitulo && mensaje && result
             const tituloAleatorio = titulos[indiceAleatorio];
 
             //mostrar el título generado en el h2
-            resultado.innerText = `Título seleccionado: ${tituloAleatorio}. ¡Feliz lectura!⭐`;
+            resultado.innerText = `Título seleccionado: ${tituloAleatorio.toUpperCase()}. ¡Feliz lectura!⭐`;
 
             //limpiar el mensaje en h3
             mensaje.innerText = "";
@@ -196,7 +196,7 @@ if (itemsLista && itemsLista.length > 0 && listaOriginal && lista && botonTitulo
 //añadir evento al ícono del menú para mostrar u ocultar el menú
 if (menuIcon && menu) {
     menuIcon.addEventListener("click", () => {
-        menu.classList.toggle("activo"); // Alterna la clase 'activo' para mostrar/ocultar el menú
+        menu.classList.toggle("activo"); //alterna la clase activo para mostrar/ocultar el menú
     });
 }
 
@@ -211,7 +211,7 @@ if (localStorage.getItem("modo") === "oscuro") {
     document.querySelector(".contenedor").classList.add("on");
     document.querySelector("nav").classList.add("on");
 
-    document.querySelectorAll("h1, h2, h3").forEach(item => item.classList.add("on"));
+    document.querySelectorAll("h1", "h2", "h3").forEach(item => item.classList.add("on"));
     document.querySelectorAll("p").forEach(item => item.classList.add("on"));
     document.querySelectorAll("nav ul li a").forEach(item => item.classList.add("on"));
     document.querySelectorAll("button").forEach(item => item.classList.add("on"));
@@ -231,7 +231,7 @@ modoOscuro.addEventListener("click", () => {
         document.querySelector(".contenedor").classList.add("on");
         document.querySelector("nav").classList.add("on");
 
-        document.querySelectorAll("h1, h2, h3").forEach(item => item.classList.add("on"));
+        document.querySelectorAll("h1", "h2", "h3").forEach(item => item.classList.add("on"));
         document.querySelectorAll("p").forEach(item => item.classList.add("on"));
         document.querySelectorAll("nav ul li a").forEach(item => item.classList.add("on"));
         document.querySelectorAll("button").forEach(item => item.classList.add("on"));
@@ -247,7 +247,7 @@ modoOscuro.addEventListener("click", () => {
         document.querySelector(".contenedor").classList.remove("on");
         document.querySelector("nav").classList.remove("on");
 
-        document.querySelectorAll("h1, h2, h3").forEach(item => item.classList.remove("on"));
+        document.querySelectorAll("h1", "h2", "h3").forEach(item => item.classList.remove("on"));
         document.querySelectorAll("p").forEach(item => item.classList.remove("on"));
         document.querySelectorAll("nav ul li a").forEach(item => item.classList.remove("on"));
         document.querySelectorAll("button").forEach(item => item.classList.remove("on"));

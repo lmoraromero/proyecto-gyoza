@@ -1,5 +1,4 @@
 /*-----------------------------------------------------------------------------*/
-
 /*PÁGINA GENERADOR*/
 /*Reglas para la sección generador*/
 .generador{
@@ -98,7 +97,6 @@ p.on{
         overflow-y: auto;
     }
 }
-
 @media screen and (max-width: 767px){
     .generador h1{
         font-size: 2em;
