@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lekton:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"> <!--Lekton-->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style_libros.css">
+    <script defer src="js/carga_libros.js"></script>
     <script defer src="js/funciones.js"></script>
 </head>
 <body>
@@ -37,22 +38,6 @@
         <footer>
             <p>LECTURA ACTUAL... <span>El Alma del Brujo - Belén Martínez ♥️🧙</span></p>
         </footer>
-        <script>
-
-            fetch("datos/resenas.json")
-            .then(respuesta => respuesta.json())
-            .then(libros => {
-                const ul = document.querySelector(".libros ul");
-                ul.innerHTML = "";
-
-                libros.forEach(libro => {
-                    const li = document.createElement("li");
-                    li.innerHTML = `<a href="review.html?id=${libro.id}">${libro.titulo} - <em>${libro.autor_libro}</em></a>`;
-                    ul.appendChild(li);
-                });
-            });
-
-        </script>
     </section>
 </body>
 </html>
