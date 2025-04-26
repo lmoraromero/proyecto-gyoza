@@ -362,6 +362,9 @@ footer.on{
         display: flex;
         animation: desplegar 0.3s ease-out;
     }
+    body.on nav ul.activo{
+        background-color: #3f1f6ed0;
+    }
     nav ul li{
         margin: 10px 0;
         text-align: center;
