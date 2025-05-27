@@ -1,5 +1,7 @@
 # Proyecto: El Club de la Gyoza
 
+La web puede encontrarse en https://clubdelagyoza.netlify.app/
+
 ## Introducción
 El club de la gyoza es un proyecto de diseño web creado con el objetivo de organizar las reseñas de los libros leídos en conjunto, de una forma que permita a las componentes del club acceder a las opiniones y puntuaciones de los libros leídos.
 
