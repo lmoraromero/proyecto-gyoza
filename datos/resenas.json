@@ -334,5 +334,26 @@
         "contenido": "En general me ha gustado. La historia era interesante y original, el mundo aunque aún no se ha visto demasiado da la sensación de que está bien construido y va dejando migajas para los siguientes libros. He de admitir que la protagonista no me ha caído bien y desde mi punto de vista me ha parecido un poco forzado el tema romance. O a lo mejor es que yo la shipeaba con la guardia. Pero también me ha parecido predecible. Eso sí, el final me ha sorprendido un poco, aunque no demasiado. En resumen: buen libro y entretenido, aunque predecible."
         }
     ]
+    },
+    {
+    "id": "belladona",
+    "titulo": "Belladona",
+    "autor_libro": "Adalyn Grace",
+    "genero": "Fantasía",
+    "paginas": 352,
+    "fecha_publicacion": "2023",
+    "leido_en": "Mayo 2025",
+    "resenas": [
+        {
+        "autor_resena": "Ana",
+        "puntuacion": "1 estrellas",
+        "contenido": "Signa resulta completamente insufrible. Es infantil, carece de personalidad y no muestra evolución alguna a lo largo de la historia.  El resto de los personajes tampoco son mucho mejor. La historia se siente bastante vacía, sin alma. La relación con Muerte es extraña y turbia, llega un punto que hasta previsible que el sea sylas. Al final, cuando él le dice que no puede estar con ella porque tiene que disfrutar de su vida humana, suena a excusa poco convincente para alargar artificialmente la historia y justificar una secuela. El giro de que Percy sea el asesino me parece cutre, los argumentos que tiene para matar a su propia familia son cutres, se equivoca y se carga a su madre y para arreglarlo pues también a su hermana. Y para rematar a este personaje, 'desaparece' y a nadie le importa, su padre y su hermana están tan contentos. El final es decepcionante (en la línea del libro). Un nuevo asesinato que justifica la existencia de otro libro."
+        },
+        {
+        "autor_resena": "Laura",
+        "puntuacion": "2.75 estrellas",
+        "contenido": "Podría ser mejor. También podría ser peor. El argumento en sí estaba bien pero creo que ha sido una mala ejecución. Quiero decir, nos hemos pasado más de la mitad del libro esperando un misterio que no se resolvía y no hacía más que añadir cosas y que al final se resuelve de una forma muy... Mal. Si me dieran un euro por cada primo que traiciona a su prima por llamar la atención tendría dos euros, que no es mucho, pero ya es casualidad. En resumen: nuevamente un villano insuficiente, una protagonista tontisima que no hace más que estar cachonda y ser una pick me y una trama que prometía mucho y se ha quedado en nada. Le he puesto un tres por que se ha leído rápido y entretiene aunque en algunos momentos me hiciera poner los ojos en blanco y querer arrancarme los pelos de lo tonta que es Signa. Y por que lo de Sylas no me lo veía venir pero se sigue quedando en tres por que siento que no tenía sentido de ser."
+        }
+    ]
     }
 ]
