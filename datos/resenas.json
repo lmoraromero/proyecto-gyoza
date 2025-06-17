@@ -318,7 +318,7 @@
     "id": "la_sanadora_de_zalindov",
     "titulo": "La sanadora de Zalindov",
     "autor_libro": "Lynette Noni",
-    "genero": "Fanatsía",
+    "genero": "Fantasía",
     "paginas": 416,
     "fecha_publicacion": "2021",
     "leido_en": "Marzo 2025",
@@ -346,12 +346,12 @@
     "resenas": [
         {
         "autor_resena": "Ana",
-        "puntuacion": "-",
-        "contenido": "Ana aún está leyendo el libro"
+        "puntuacion": "1 estrellas",
+        "contenido": "Decepcionada porque el libro anterior me gustó bastante. La historia es muy lenta, la protagonista es muy sosa, sin carisma, la patata positiva sería mejor protagonista.  A lo mejor tanlan se salva, el resto de personajes también son insufribles. Yo me quedaría con el vals de la bruja y daría por finalizado todo."
         },
         {
         "autor_resena": "Laura",
-        "puntuacion": "3.5 estrellas",
+        "puntuacion": "3.25 estrellas",
         "contenido": "No me ha gustado nada la historia, en comparación con la primera parte es una decepción. Me esperaba más de Aliester, de Liang y de Adam. Las razones de Adam me parecían insulsas (como me pasó en el primer libro con Kate), Liang es una protagonista horrible, no me caía nada bien y tomaba todas las decisiones incorrectas. Lo único bueno es que tiene buen ritmo y es rápido de leer si te pones, aunque no destaque mucho el argumento."
         }
     ]
@@ -374,6 +374,27 @@
         "autor_resena": "Laura",
         "puntuacion": "2.75 estrellas",
         "contenido": "Podría ser mejor. También podría ser peor. El argumento en sí estaba bien pero creo que ha sido una mala ejecución. Quiero decir, nos hemos pasado más de la mitad del libro esperando un misterio que no se resolvía y no hacía más que añadir cosas y que al final se resuelve de una forma muy... Mal. Si me dieran un euro por cada primo que traiciona a su prima por llamar la atención tendría dos euros, que no es mucho, pero ya es casualidad. En resumen: nuevamente un villano insuficiente, una protagonista tontisima que no hace más que estar cachonda y ser una pick me y una trama que prometía mucho y se ha quedado en nada."
+        }
+    ]
+    },
+    {
+    "id": "la_prisionera_de_vallenia",
+    "titulo": "La prisionera de vallenia",
+    "autor_libro": "Lynette Noni",
+    "genero": "Fantasía",
+    "paginas": 448,
+    "fecha_publicacion": "2023",
+    "leido_en": "Junio 2025",
+    "resenas": [
+        {
+        "autor_resena": "Ana",
+        "puntuacion": "4 estrellas",
+        "contenido": "El libro hasta los últimos 10 capítulos más o menos no merece la pena, pero como necesitan estar alargando las historias para sacar dinero, pues pasan estas cosas. A mi solo me ha caído bien el primo y el hermano, el resto son personajes muy sencillos. Los dos protagonistas son sosos a más no poder, el príncipe jaren es perfecto, menos para lanzarse y declararse abiertamente, demasiado slow burn para mi ansiedad. A veces, parece que ella se siente obligada a sentirse atraída porque el es perfecto. A Zuleeka se la ve venir desde el principio, ella es muy tonta cuando se cree que les ha dado todas las claves para conseguir el reino y no lo van a hacer. El final me ha gustado mucho, la verdad, es la razón de las 4 estrellas. Quiero pensar que este era un libro de transición y en la ultima parte habrá más acción, aunque no sé si ese es el estilo de la autora."
+        },
+        {
+        "autor_resena": "Laura",
+        "puntuacion": "3.25 estrellas",
+        "contenido": "Sintiéndolo mucho no me ha gustado. Tres cuartas partes del libro sobrarían perfectamente, ya que sólo son una repetición de Kiva babeando por Jaren y sintiéndose culpable por que quiere ayudar a su familia pero es que Jaren es maravilloso y perfecto y un amor de persona. Para mí el final ha sido predecible (llevo desde la primera aparición sin fiarme de la hermana de Kiva). Y no sé si es mi sensación pero siento que en este libro Kiva se ha vuelto más tonta, no sé explicarlo. Pero lo que más me ha molestado es que literalmente no pasa nada en más de la mitad del libro y luego en cinco capítulos meten todo apresurado. Ni la consistencia en los personajes. Por mi parte no estoy segura de querer seguir con el último libro, tampoco me ha gustado el final"
         }
     ]
     }
